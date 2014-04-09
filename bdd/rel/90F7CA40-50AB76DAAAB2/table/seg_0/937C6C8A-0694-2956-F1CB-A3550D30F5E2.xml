@@ -1,0 +1,64 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="937C6C8A-0694-2956-F1CB-A3550D30F5E2" name="Livre">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-09 08:23:28 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Produit_prod_id" id="CD8240A2-39B9-3989-E1CE-CF610A08E324">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-09 08:39:07 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<delegate>A2B36760-B204-B8A7-76EE-BA64E711E62F</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DE5E738D-43E4-B1E8-2BF0-51A518B0DBC4" referredColumn="A2B36760-B204-B8A7-76EE-BA64E711E62F"/>
+</associations>
+</Column>
+<Column name="liv_nbPages" id="37B4B2A5-DEDF-DDCA-6B3D-EF8B5782CB3E">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-09 09:26:37 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="09C12D4D-F34E-716D-7D21-D9FDE90763E9" name="Livre_PK">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-09 08:39:20 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CD8240A2-39B9-3989-E1CE-CF610A08E324"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="751639CE-F1E6-7154-DB59-2B9EB1994797" name="Livre_Produit_FK">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-09 08:39:07 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CD8240A2-39B9-3989-E1CE-CF610A08E324"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

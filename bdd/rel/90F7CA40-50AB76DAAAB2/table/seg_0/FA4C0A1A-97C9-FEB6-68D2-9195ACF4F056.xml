@@ -1,0 +1,85 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FA4C0A1A-97C9-FEB6-68D2-9195ACF4F056" name="Produit">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-09 08:22:59 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="prod_id" id="A2B36760-B204-B8A7-76EE-BA64E711E62F">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-09 08:34:01 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TVA_tva_code" id="3127C115-94B8-DC21-27BF-AB5D8BDF0E3A">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-09 08:50:53 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<delegate>C39EAC28-BA95-5381-E408-F4AD89D0D7D9</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9970CEC6-5657-1017-4A04-6DECBC70927C" referredColumn="C39EAC28-BA95-5381-E408-F4AD89D0D7D9"/>
+</associations>
+</Column>
+<Column name="prod_nom" id="DCCB8FA8-BFBA-6D4B-5CFA-E58DC900C98E">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-09 09:04:05 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="prod_description" id="2F569044-4B15-219B-0BE5-4C2ACFC0BA58">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-09 09:26:06 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT040</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="60090B3B-A14D-1D08-9670-B636B88583A4" name="Produit_PK">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-09 08:34:01 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A2B36760-B204-B8A7-76EE-BA64E711E62F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9AB683EA-0407-F955-DE1B-5F75FA790BB5" name="Produit_TVA_FK">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-09 08:50:53 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3127C115-94B8-DC21-27BF-AB5D8BDF0E3A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,62 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="CEDAA4D4-252C-FA23-7135-015FC09CAF4C" name="Commande">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-09 08:29:33 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="com_numero" id="C08EB52B-6E8D-74EA-116A-6AD767B3FA20">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-09 08:30:55 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Client_cli_id" id="9064FAB1-B2A7-9B69-D966-99A6EA651C61">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-09 08:31:26 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<delegate>6CC0FC2E-9864-CF5B-B9AE-1BD504E56867</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7A60B933-E0E8-C37C-B074-5A7C67622B2A" referredColumn="6CC0FC2E-9864-CF5B-B9AE-1BD504E56867"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="0D6CAC28-D964-436F-8A1B-5B16C76E7993" name="Commande_PK">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-09 08:30:55 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C08EB52B-6E8D-74EA-116A-6AD767B3FA20"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5A94E2B9-12B8-3E76-6E98-652FE3CFA324" name="Commande_Client_FK">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-09 08:31:26 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9064FAB1-B2A7-9B69-D966-99A6EA651C61"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

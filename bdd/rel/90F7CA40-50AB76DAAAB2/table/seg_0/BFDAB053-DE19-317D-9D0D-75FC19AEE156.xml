@@ -1,0 +1,85 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BFDAB053-DE19-317D-9D0D-75FC19AEE156" name="Piste">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-09 08:39:49 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="pist_id" id="24B61CB3-3A77-6ED9-0907-37CB4C4400D6">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-09 08:41:15 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CD_Produit_prod_id" id="9168271E-FDB8-E7D6-1522-C4F5B694CBBD">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-09 08:41:22 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<delegate>945EDAE4-4E0B-0863-BCC9-A44D5F47FE44</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0DC11C82-4CB1-9DDA-6AAF-E7D5AFE64865" referredColumn="945EDAE4-4E0B-0863-BCC9-A44D5F47FE44"/>
+</associations>
+</Column>
+<Column name="pis_titre" id="EE35180B-9255-669A-9D46-C2A2E77FBC11">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-09 09:04:33 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="pist_duree" id="A4B78378-DBAE-1C35-7BE8-9A5D915CFB4D">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-09 09:04:57 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D1D5502A-C843-7DEB-3446-A5DC3558D10B" name="Piste_PK">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-09 08:41:15 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="24B61CB3-3A77-6ED9-0907-37CB4C4400D6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="07E8F51D-18C0-6411-F530-59B99BB0206C" name="Piste_CD_FK">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-09 08:41:22 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9168271E-FDB8-E7D6-1522-C4F5B694CBBD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

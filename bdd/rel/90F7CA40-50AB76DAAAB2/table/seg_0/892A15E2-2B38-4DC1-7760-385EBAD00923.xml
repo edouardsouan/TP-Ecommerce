@@ -1,0 +1,111 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="892A15E2-2B38-4DC1-7760-385EBAD00923" name="Adresse">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-09 08:21:32 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="adr_id" id="2BEA88E7-1F12-0990-D3BD-6CBB9016738E">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-09 08:27:00 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Client_cli_id" id="F73A2267-5BDF-0025-6EA8-C89A8F6AB271">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-09 08:28:13 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<delegate>6CC0FC2E-9864-CF5B-B9AE-1BD504E56867</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3496BA00-0333-C65F-021A-9347ED623CDD" referredColumn="6CC0FC2E-9864-CF5B-B9AE-1BD504E56867"/>
+</associations>
+</Column>
+<Column name="adr_adresse1" id="D597A4FA-A074-0FF4-F577-C33F63F185A8">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-09 09:00:24 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="adr_adresse2" id="5359A938-7FD0-B2DF-5164-88F5D0494F6F">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-09 09:00:40 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="adr_cp" id="2702475A-8030-A3F2-3426-B6354238EF78">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-09 09:00:59 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="adr_ville" id="00034A54-E35C-279F-42B7-D3F69C827130">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-09 09:01:14 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="901CBEE1-285A-7D37-6164-D842D8FEE4D7" name="Adresse_PK">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-09 08:27:00 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2BEA88E7-1F12-0990-D3BD-6CBB9016738E"/>
+<colUsage columnID="2702475A-8030-A3F2-3426-B6354238EF78"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4E940AC8-090B-FDBE-5803-0AD0462F4EE2" name="Adresse_Client_FK">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-09 08:28:13 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F73A2267-5BDF-0025-6EA8-C89A8F6AB271"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,26 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.relational.RelationalDesign>
+   <object objectType="Table" objectID="892A15E2-2B38-4DC1-7760-385EBAD00923" name="Adresse" seqName="seg_0"/>
+   <object objectType="Table" objectID="848845F8-F723-85BA-A84D-8841DA9D686C" name="CB" seqName="seg_0"/>
+   <object objectType="Table" objectID="824C33CF-A647-DF07-0CB1-09BC7CB260F1" name="CD" seqName="seg_0"/>
+   <object objectType="Table" objectID="4D59A06B-0717-3145-27A9-A52128659196" name="Client" seqName="seg_0"/>
+   <object objectType="Table" objectID="CEDAA4D4-252C-FA23-7135-015FC09CAF4C" name="Commande" seqName="seg_0"/>
+   <object objectType="Table" objectID="B1B2A85F-BC2D-53FB-2C87-556B1B1BC33F" name="Etat" seqName="seg_0"/>
+   <object objectType="Table" objectID="F0D556AC-AD34-0E70-89B6-CE14D7541E96" name="EtatCommande" seqName="seg_0"/>
+   <object objectType="Table" objectID="695C792B-884A-E45C-9C58-F82D0D50B3AE" name="LigneCommande" seqName="seg_0"/>
+   <object objectType="Table" objectID="937C6C8A-0694-2956-F1CB-A3550D30F5E2" name="Livre" seqName="seg_0"/>
+   <object objectType="Table" objectID="BFDAB053-DE19-317D-9D0D-75FC19AEE156" name="Piste" seqName="seg_0"/>
+   <object objectType="Table" objectID="FA4C0A1A-97C9-FEB6-68D2-9195ACF4F056" name="Produit" seqName="seg_0"/>
+   <object objectType="Table" objectID="C9A1C04A-1D64-5935-FC6C-CF216A7A96D5" name="TVA" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="3496BA00-0333-C65F-021A-9347ED623CDD" name="Adresse_Client_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="45888CDD-912B-CB8C-6C76-A9830223EC8C" name="CB_Client_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="07101E40-F42D-0800-DB60-18AEE653AD7B" name="CD_Produit_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="7A60B933-E0E8-C37C-B074-5A7C67622B2A" name="Commande_Client_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="68AFFB04-256A-5CEE-8497-DB625B76427A" name="EtatCommande_Commande_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="26239226-09C2-8835-B3AC-C1005323CE6C" name="EtatCommande_Etat_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="9970CEC6-5657-1017-4A04-6DECBC70927C" name="Produit_TVA_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="181B1301-5281-82D2-5F89-D5F025237BF5" name="LigneCommande_Commande_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="46828491-99A7-D4D7-9BD0-E9CD2E7CA560" name="LigneCommande_Produit_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="DE5E738D-43E4-B1E8-2BF0-51A518B0DBC4" name="Livre_Produit_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="0DC11C82-4CB1-9DDA-6AAF-E7D5AFE64865" name="Piste_CD_FK" seqName="seg_0"/>
+</oracle.dbtools.crest.model.design.relational.RelationalDesign>

@@ -1,0 +1,100 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F0D556AC-AD34-0E70-89B6-CE14D7541E96" name="EtatCommande">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-09 08:44:03 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="etaCom_id" id="4D61F5EC-F423-465B-1C6B-E53ADA8B6567">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-09 08:44:42 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Etat_etat_id" id="899D10F7-A543-6515-46B3-F2A4C5691E43">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-09 08:45:15 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<delegate>1E78D86B-81B4-00C9-FE21-56BECEF73D43</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="26239226-09C2-8835-B3AC-C1005323CE6C" referredColumn="1E78D86B-81B4-00C9-FE21-56BECEF73D43"/>
+</associations>
+</Column>
+<Column name="Commande_com_numero" id="FB1F509C-45DE-5056-2D85-1E9787AF928B">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-09 08:45:21 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<delegate>C08EB52B-6E8D-74EA-116A-6AD767B3FA20</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="68AFFB04-256A-5CEE-8497-DB625B76427A" referredColumn="C08EB52B-6E8D-74EA-116A-6AD767B3FA20"/>
+</associations>
+</Column>
+<Column name="etaCom_date" id="27FFC7C4-ED48-5EFE-ED2E-FC7635C8C0B4">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-09 08:45:52 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A7040DA7-922B-F783-338A-874A7271A65E" name="EtatCommande_PK">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-09 08:44:42 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4D61F5EC-F423-465B-1C6B-E53ADA8B6567"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C4D1B85D-DB36-327B-782A-C4A344E42900" name="EtatCommande_Etat_FK">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-09 08:45:15 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="899D10F7-A543-6515-46B3-F2A4C5691E43"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AFE9C155-D547-5D05-DF5B-8159FD526AEC" name="EtatCommande_Commande_FK">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-09 08:45:21 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FB1F509C-45DE-5056-2D85-1E9787AF928B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
