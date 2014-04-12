@@ -95,4 +95,37 @@ BEGIN
     WHEN TypeAdr_NOT_FOUND THEN
         DBMS_OUTPUT.PUT_LINE('Le type de l adresse n existe pas. Veuillez vérifier la valeur saisie.');
 END;
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+--Authentification d'un utilisateur
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+create or replace PROCEDURE CONNEXION(p_MailUser CLIENT.CLI_MAIL%TYPE,p_Pwd CLIENT.CLI_MOTDEPASSE%TYPE)
+AS
+  vUserName CLIENT.CLI_NOM%TYPE := NULL;
+  vUserFirstName CLIENT.CLI_PRENOM%TYPE := NULL;
+  CURSOR cAuthentification IS SELECT CLI_NOM,CLI_PRENOM FROM CLIENT WHERE CLI_MOTDEPASSE=p_Pwd AND CLI_MAIL=p_MAILUSER;
+  BAD_AUTH EXCEPTION;
+BEGIN
+--Tentative de connexion--
+  OPEN cAuthentification;
+  LOOP
+  FETCH cAuthentification INTO vUserName,vUserFirstName;
+  EXIT WHEN cAuthentification%NOTFOUND;
+  END LOOP;
+  CLOSE cAuthentification;
+  
+  IF vUserName IS NULL THEN
+    RAISE BAD_AUTH;
+  ELSIF vUserFirstName IS NULL THEN
+    RAISE BAD_AUTH;
+  ELSE
+    DBMS_OUTPUT.PUT_LINE('Bienvenue '|| vUserFirstName || ' '||vUserName);
+  END IF;
+  
+--EXCEPTIONS--
+EXCEPTION
+  WHEN BAD_AUTH THEN 
+    DBMS_OUTPUT.PUT_LINE('La combinaison du mail et du mot de passe renseignés est incorrecte.');
+  
+END;
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
