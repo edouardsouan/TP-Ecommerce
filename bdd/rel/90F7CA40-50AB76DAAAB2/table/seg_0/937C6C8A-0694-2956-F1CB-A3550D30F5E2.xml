@@ -35,6 +35,50 @@
 <dataTypePrecision>4</dataTypePrecision>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="Editeur_edit_id" id="7AA49668-B9E3-3EDF-02C2-D5A3CB24D762">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-12 10:37:00 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<delegate>55935FB7-2FDB-AB2E-ED06-FF7C7BA64934</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DECFAB4C-AA04-986B-63BD-EC7BAE08B731" referredColumn="55935FB7-2FDB-AB2E-ED06-FF7C7BA64934"/>
+</associations>
+</Column>
+<Column name="liv_auteur" id="3293229C-036D-A211-7864-F236C4B39221">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-12 10:38:34 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Genre_genre_id" id="8CE102EA-7462-FAB5-0922-B7D792B025F7">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-12 10:41:45 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<delegate>7D954F1A-03D6-0DF3-0754-E38CA81106EE</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="59BB0668-AF9D-0344-C1A0-3499AB374F7E" referredColumn="7D954F1A-03D6-0DF3-0754-E38CA81106EE"/>
+</associations>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="09C12D4D-F34E-716D-7D21-D9FDE90763E9" name="Livre_PK">
@@ -58,6 +102,28 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="CD8240A2-39B9-3989-E1CE-CF610A08E324"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D475F6B3-1C7F-31EC-3147-8DAA3CE9B487" name="Livre_Editeur_FK">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-12 10:37:00 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7AA49668-B9E3-3EDF-02C2-D5A3CB24D762"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CA37B93D-0332-961B-A0F5-487A980DCABB" name="Livre_Genre_FK">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-12 10:41:45 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8CE102EA-7462-FAB5-0922-B7D792B025F7"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

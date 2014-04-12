@@ -1,100 +1,101 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F0D556AC-AD34-0E70-89B6-CE14D7541E96" name="EtatCommande">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="5D2BF4C3-5275-47BC-C6F9-8CC4F04382A4" name="NoteProduit">
 <createdBy>nicolas</createdBy>
-<createdTime>2014-04-09 08:44:03 UTC</createdTime>
+<createdTime>2014-04-12 09:39:35 UTC</createdTime>
 <generatorID>Généré par l&apos;utilisateur</generatorID>
 <ownerDesignName>bdd</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="etaCom_id" id="4D61F5EC-F423-465B-1C6B-E53ADA8B6567">
+<Column name="Produit_prod_id" id="7CA92C8A-7BC1-71EB-0F67-8A81AF9620D9">
 <createdBy>nicolas</createdBy>
-<createdTime>2014-04-09 08:44:42 UTC</createdTime>
+<createdTime>2014-04-12 09:39:52 UTC</createdTime>
 <generatorID>Généré par l&apos;utilisateur</generatorID>
 <ownerDesignName>bdd</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>2</dataTypePrecision>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="Etat_etat_id" id="899D10F7-A543-6515-46B3-F2A4C5691E43">
-<createdBy>nicolas</createdBy>
-<createdTime>2014-04-09 08:45:15 UTC</createdTime>
-<generatorID>Généré par l&apos;utilisateur</generatorID>
-<ownerDesignName>bdd</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>2</dataTypePrecision>
-<delegate>1E78D86B-81B4-00C9-FE21-56BECEF73D43</delegate>
+<delegate>A2B36760-B204-B8A7-76EE-BA64E711E62F</delegate>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="26239226-09C2-8835-B3AC-C1005323CE6C" referredColumn="1E78D86B-81B4-00C9-FE21-56BECEF73D43"/>
+<colAssociation fkAssociation="C4B200F5-7A14-CD7E-7606-802B2271A450" referredColumn="A2B36760-B204-B8A7-76EE-BA64E711E62F"/>
 </associations>
 </Column>
-<Column name="etaCom_date" id="27FFC7C4-ED48-5EFE-ED2E-FC7635C8C0B4">
+<Column name="Client_cli_id" id="72C7921D-65DC-E544-CB19-FEBFFD984A1F">
 <createdBy>nicolas</createdBy>
-<createdTime>2014-04-09 08:45:52 UTC</createdTime>
+<createdTime>2014-04-12 09:40:00 UTC</createdTime>
 <generatorID>Généré par l&apos;utilisateur</generatorID>
 <ownerDesignName>bdd</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT015</logicalDatatype>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<delegate>6CC0FC2E-9864-CF5B-B9AE-1BD504E56867</delegate>
+<previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4D9AD036-233C-BB23-3EE0-90452838B4C0" referredColumn="6CC0FC2E-9864-CF5B-B9AE-1BD504E56867"/>
+</associations>
 </Column>
-<Column name="Commande_Panier_panier_id" id="10E414EE-BB87-F381-89C4-9856E9934A5A">
+<Column name="note_id" id="140A0E29-1AA0-F3CC-1EE2-C0B9AF7B2608">
 <createdBy>nicolas</createdBy>
-<createdTime>2014-04-12 10:19:32 UTC</createdTime>
+<createdTime>2014-04-12 09:40:40 UTC</createdTime>
 <generatorID>Généré par l&apos;utilisateur</generatorID>
 <ownerDesignName>bdd</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>3</dataTypePrecision>
-<delegate>9172FBC8-CE90-DD8D-1C53-DA39B97E6A8C</delegate>
-<previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="68AFFB04-256A-5CEE-8497-DB625B76427A" referredColumn="9172FBC8-CE90-DD8D-1C53-DA39B97E6A8C"/>
-</associations>
+</Column>
+<Column name="note_valeur" id="B0464147-364B-4B17-E8FA-5A3FB1F56923">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-12 09:41:02 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="A7040DA7-922B-F783-338A-874A7271A65E" name="EtatCommande_PK">
+<ind_PK_UK id="9521F4FE-0D55-B6B6-5923-51E5B08E45B8" name="NoteProduit_PK">
 <createdBy>nicolas</createdBy>
-<createdTime>2014-04-09 08:44:42 UTC</createdTime>
+<createdTime>2014-04-12 09:40:40 UTC</createdTime>
 <generatorID>Généré par l&apos;utilisateur</generatorID>
 <ownerDesignName>bdd</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="4D61F5EC-F423-465B-1C6B-E53ADA8B6567"/>
+<colUsage columnID="140A0E29-1AA0-F3CC-1EE2-C0B9AF7B2608"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="C4D1B85D-DB36-327B-782A-C4A344E42900" name="EtatCommande_Etat_FK">
+<ind_PK_UK id="D1C323C9-72CA-9DCC-F2DF-6539C4A32D33" name="NoteProduit_Produit_FK">
 <createdBy>nicolas</createdBy>
-<createdTime>2014-04-09 08:45:15 UTC</createdTime>
+<createdTime>2014-04-12 09:39:52 UTC</createdTime>
 <generatorID>Généré par l&apos;utilisateur</generatorID>
 <ownerDesignName>bdd</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="899D10F7-A543-6515-46B3-F2A4C5691E43"/>
+<colUsage columnID="7CA92C8A-7BC1-71EB-0F67-8A81AF9620D9"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="AFE9C155-D547-5D05-DF5B-8159FD526AEC" name="EtatCommande_Commande_FK">
+<ind_PK_UK id="6FB6EDC5-8741-ADAC-6143-5BEA9B70546C" name="NoteProduit_Client_FK">
 <createdBy>nicolas</createdBy>
-<createdTime>2014-04-09 08:45:21 UTC</createdTime>
+<createdTime>2014-04-12 09:40:00 UTC</createdTime>
 <generatorID>Généré par l&apos;utilisateur</generatorID>
 <ownerDesignName>bdd</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="10E414EE-BB87-F381-89C4-9856E9934A5A"/>
+<colUsage columnID="72C7921D-65DC-E544-CB19-FEBFFD984A1F"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

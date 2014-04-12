@@ -1,12 +1,12 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="7A60B933-E0E8-C37C-B074-5A7C67622B2A" name="Commande_Client_FK">
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="4D9AD036-233C-BB23-3EE0-90452838B4C0" name="NoteProduit_Client_FK">
 <createdBy>nicolas</createdBy>
-<createdTime>2014-04-09 08:31:26 UTC</createdTime>
+<createdTime>2014-04-12 09:40:00 UTC</createdTime>
 <generatorID>Généré par l&apos;utilisateur</generatorID>
 <ownerDesignName>bdd</ownerDesignName>
-<containerWithKeyObject>CEDAA4D4-252C-FA23-7135-015FC09CAF4C</containerWithKeyObject>
+<containerWithKeyObject>5D2BF4C3-5275-47BC-C6F9-8CC4F04382A4</containerWithKeyObject>
 <deleteRule>NO ACTION</deleteRule>
-<localFKIndex>5A94E2B9-12B8-3E76-6E98-652FE3CFA324</localFKIndex>
+<localFKIndex>6FB6EDC5-8741-ADAC-6143-5BEA9B70546C</localFKIndex>
 <keyObject>EAAEF4DA-A55B-E696-89FC-0B26CEF03732</keyObject>
 <mandatory>true</mandatory>
 <transferable>true</transferable>

@@ -1,15 +1,15 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="CEDAA4D4-252C-FA23-7135-015FC09CAF4C" name="Commande">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="5F7DE3BD-40BF-3AB3-F953-3EABB970B688" name="Domicile">
 <createdBy>nicolas</createdBy>
-<createdTime>2014-04-09 08:29:33 UTC</createdTime>
+<createdTime>2014-04-12 10:31:24 UTC</createdTime>
 <generatorID>Généré par l&apos;utilisateur</generatorID>
 <ownerDesignName>bdd</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="Livraison_livr_id" id="2FB7379B-3A4C-69F1-8BBA-8DC682EEB12F">
+<Column name="Livraison_livr_id" id="973112DA-E327-9D59-422B-DAC12DC70B4F">
 <createdBy>nicolas</createdBy>
-<createdTime>2014-04-12 10:06:17 UTC</createdTime>
+<createdTime>2014-04-12 10:32:21 UTC</createdTime>
 <generatorID>Généré par l&apos;utilisateur</generatorID>
 <ownerDesignName>bdd</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -20,59 +20,47 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="1E5C34AF-112D-EBB7-55D4-4255ECB34577" referredColumn="DB54A17B-849A-D14A-D708-6ECEA5417F7E"/>
+<colAssociation fkAssociation="32C0B700-9DC3-F713-3E11-EE5241829340" referredColumn="DB54A17B-849A-D14A-D708-6ECEA5417F7E"/>
 </associations>
 </Column>
-<Column name="Panier_panier_id" id="9172FBC8-CE90-DD8D-1C53-DA39B97E6A8C">
+<Column name="Client_cli_id" id="89B97FBC-AEF5-F1C2-BBC7-40B644234885">
 <createdBy>nicolas</createdBy>
-<createdTime>2014-04-12 10:17:24 UTC</createdTime>
+<createdTime>2014-04-12 10:32:32 UTC</createdTime>
 <generatorID>Généré par l&apos;utilisateur</generatorID>
 <ownerDesignName>bdd</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>3</dataTypePrecision>
-<delegate>E87AFAC4-DCE8-6B4D-94AA-A63999312666</delegate>
+<dataTypePrecision>2</dataTypePrecision>
+<delegate>6CC0FC2E-9864-CF5B-B9AE-1BD504E56867</delegate>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="6F38B45B-269D-2398-0A39-C94AFA927215" referredColumn="E87AFAC4-DCE8-6B4D-94AA-A63999312666"/>
+<colAssociation fkAssociation="B81911CF-7610-BD19-9838-873241B25C8E" referredColumn="6CC0FC2E-9864-CF5B-B9AE-1BD504E56867"/>
 </associations>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="0D6CAC28-D964-436F-8A1B-5B16C76E7993" name="Commande_PK">
+<ind_PK_UK id="1926AEEF-AB11-1471-5100-642CD1BCE224" name="Domicile_Livraison_FK">
 <createdBy>nicolas</createdBy>
-<createdTime>2014-04-09 08:30:55 UTC</createdTime>
-<generatorID>Généré par l&apos;utilisateur</generatorID>
-<ownerDesignName>bdd</ownerDesignName>
-<pk>true</pk>
-<indexState>Primary Constraint</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="9172FBC8-CE90-DD8D-1C53-DA39B97E6A8C"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="E70AAB8B-83DF-F322-98DF-BBEFB4071DEC" name="Commande_Livraison_FK">
-<createdBy>nicolas</createdBy>
-<createdTime>2014-04-12 10:06:17 UTC</createdTime>
+<createdTime>2014-04-12 10:32:21 UTC</createdTime>
 <generatorID>Généré par l&apos;utilisateur</generatorID>
 <ownerDesignName>bdd</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="2FB7379B-3A4C-69F1-8BBA-8DC682EEB12F"/>
+<colUsage columnID="973112DA-E327-9D59-422B-DAC12DC70B4F"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="1AAC55AD-D616-1447-F139-F87723F6FAD5" name="Commande_Panier_FK">
+<ind_PK_UK id="A4C4F73B-46A5-A218-7561-47E5BA8484F9" name="Domicile_Client_FK">
 <createdBy>nicolas</createdBy>
-<createdTime>2014-04-12 10:17:24 UTC</createdTime>
+<createdTime>2014-04-12 10:32:32 UTC</createdTime>
 <generatorID>Généré par l&apos;utilisateur</generatorID>
 <ownerDesignName>bdd</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="9172FBC8-CE90-DD8D-1C53-DA39B97E6A8C"/>
+<colUsage columnID="89B97FBC-AEF5-F1C2-BBC7-40B644234885"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

@@ -1,15 +1,15 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B1B2A85F-BC2D-53FB-2C87-556B1B1BC33F" name="Etat">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D73AB6C2-D97E-5700-C81E-2A96E9558328" name="Genre">
 <createdBy>nicolas</createdBy>
-<createdTime>2014-04-09 08:41:45 UTC</createdTime>
+<createdTime>2014-04-12 10:40:25 UTC</createdTime>
 <generatorID>Généré par l&apos;utilisateur</generatorID>
 <ownerDesignName>bdd</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="etat_id" id="1E78D86B-81B4-00C9-FE21-56BECEF73D43">
+<Column name="genre_id" id="7D954F1A-03D6-0DF3-0754-E38CA81106EE">
 <createdBy>nicolas</createdBy>
-<createdTime>2014-04-09 08:42:03 UTC</createdTime>
+<createdTime>2014-04-12 10:41:24 UTC</createdTime>
 <generatorID>Généré par l&apos;utilisateur</generatorID>
 <ownerDesignName>bdd</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -18,30 +18,30 @@
 <dataTypePrecision>2</dataTypePrecision>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="etat_libelle" id="77AD4AC5-C9A4-ED1D-919B-0971E1FF56A0">
+<Column name="genre_libelle" id="63AFA75F-3018-B2DC-899A-418EA6FF3E46">
 <createdBy>nicolas</createdBy>
-<createdTime>2014-04-09 09:05:24 UTC</createdTime>
+<createdTime>2014-04-12 10:41:38 UTC</createdTime>
 <generatorID>Généré par l&apos;utilisateur</generatorID>
 <ownerDesignName>bdd</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT037</logicalDatatype>
-<dataTypeSize>50</dataTypeSize>
+<dataTypeSize>50 CHAR</dataTypeSize>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="49ED89EA-A4B4-356B-9361-75F12C67B2B8" name="Etat_PK">
+<ind_PK_UK id="E2BC372F-C3FC-1EA0-196F-AF7175490582" name="Genre_PK">
 <createdBy>nicolas</createdBy>
-<createdTime>2014-04-09 08:42:03 UTC</createdTime>
+<createdTime>2014-04-12 10:41:24 UTC</createdTime>
 <generatorID>Généré par l&apos;utilisateur</generatorID>
 <ownerDesignName>bdd</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="1E78D86B-81B4-00C9-FE21-56BECEF73D43"/>
+<colUsage columnID="7D954F1A-03D6-0DF3-0754-E38CA81106EE"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

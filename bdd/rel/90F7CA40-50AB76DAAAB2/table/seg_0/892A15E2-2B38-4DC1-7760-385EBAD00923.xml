@@ -81,6 +81,22 @@
 <dataTypeSize>50 CHAR</dataTypeSize>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="TypeAdresse_adrType_id" id="FEC7FA13-82C5-D3E4-6B0A-753E28076419">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-12 10:34:10 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<delegate>3BF0B834-3CA5-D246-97E2-FF974BECA00A</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="16E0DB76-F6C3-D005-4AAE-3456681E76C6" referredColumn="3BF0B834-3CA5-D246-97E2-FF974BECA00A"/>
+</associations>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="901CBEE1-285A-7D37-6164-D842D8FEE4D7" name="Adresse_PK">
@@ -105,6 +121,17 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="F73A2267-5BDF-0025-6EA8-C89A8F6AB271"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="02D243C7-543C-3A9D-ECEA-783159D588C8" name="Adresse_TypeAdresse_FK">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-12 10:34:10 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FEC7FA13-82C5-D3E4-6B0A-753E28076419"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

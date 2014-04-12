@@ -1,15 +1,15 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B1B2A85F-BC2D-53FB-2C87-556B1B1BC33F" name="Etat">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="57E35E72-C458-25B7-06AE-BE9C2CFADDBF" name="Vendeur">
 <createdBy>nicolas</createdBy>
-<createdTime>2014-04-09 08:41:45 UTC</createdTime>
+<createdTime>2014-04-12 09:54:53 UTC</createdTime>
 <generatorID>Généré par l&apos;utilisateur</generatorID>
 <ownerDesignName>bdd</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="etat_id" id="1E78D86B-81B4-00C9-FE21-56BECEF73D43">
+<Column name="vend_id" id="2C32F8C9-F65F-9E91-94EE-95071DB32745">
 <createdBy>nicolas</createdBy>
-<createdTime>2014-04-09 08:42:03 UTC</createdTime>
+<createdTime>2014-04-12 09:55:12 UTC</createdTime>
 <generatorID>Généré par l&apos;utilisateur</generatorID>
 <ownerDesignName>bdd</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -18,9 +18,9 @@
 <dataTypePrecision>2</dataTypePrecision>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="etat_libelle" id="77AD4AC5-C9A4-ED1D-919B-0971E1FF56A0">
+<Column name="vend_nom" id="53049EBC-A610-B83A-EFF0-1A7E2DFE5E81">
 <createdBy>nicolas</createdBy>
-<createdTime>2014-04-09 09:05:24 UTC</createdTime>
+<createdTime>2014-04-12 10:04:07 UTC</createdTime>
 <generatorID>Généré par l&apos;utilisateur</generatorID>
 <ownerDesignName>bdd</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
@@ -32,16 +32,16 @@
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="49ED89EA-A4B4-356B-9361-75F12C67B2B8" name="Etat_PK">
+<ind_PK_UK id="544C845D-33F8-3256-29F6-FE1F221F2FF3" name="Vendeur_PK">
 <createdBy>nicolas</createdBy>
-<createdTime>2014-04-09 08:42:03 UTC</createdTime>
+<createdTime>2014-04-12 09:55:12 UTC</createdTime>
 <generatorID>Généré par l&apos;utilisateur</generatorID>
 <ownerDesignName>bdd</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="1E78D86B-81B4-00C9-FE21-56BECEF73D43"/>
+<colUsage columnID="2C32F8C9-F65F-9E91-94EE-95071DB32745"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

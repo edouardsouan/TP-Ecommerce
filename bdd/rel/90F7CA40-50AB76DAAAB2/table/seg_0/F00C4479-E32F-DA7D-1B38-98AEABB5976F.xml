@@ -1,0 +1,63 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F00C4479-E32F-DA7D-1B38-98AEABB5976F" name="Panier">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-12 10:08:10 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="panier_id" id="E87AFAC4-DCE8-6B4D-94AA-A63999312666">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-12 10:08:23 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Client_cli_id" id="75DD9A38-B3BB-09F0-03FE-4743BE5571C7">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-12 10:11:33 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<delegate>6CC0FC2E-9864-CF5B-B9AE-1BD504E56867</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E0343AA7-D610-4291-CC3D-6757961A0E50" referredColumn="6CC0FC2E-9864-CF5B-B9AE-1BD504E56867"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="96EF30C2-7576-0790-91A1-12F122BFE247" name="Panier_PK">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-12 10:12:27 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E87AFAC4-DCE8-6B4D-94AA-A63999312666"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F0EFA925-FB69-7176-9550-D27A5F95D120" name="Panier_Client_FK">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-12 10:11:33 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="75DD9A38-B3BB-09F0-03FE-4743BE5571C7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

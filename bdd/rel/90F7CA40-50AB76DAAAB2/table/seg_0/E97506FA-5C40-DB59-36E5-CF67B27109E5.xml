@@ -1,41 +1,26 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="695C792B-884A-E45C-9C58-F82D0D50B3AE" name="LigneCommande">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E97506FA-5C40-DB59-36E5-CF67B27109E5" name="Vend">
 <createdBy>nicolas</createdBy>
-<createdTime>2014-04-09 08:31:34 UTC</createdTime>
+<createdTime>2014-04-12 09:57:02 UTC</createdTime>
 <generatorID>Généré par l&apos;utilisateur</generatorID>
 <ownerDesignName>bdd</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="lign_id" id="8730A727-16F7-FDC8-0099-F9723AF4571C">
+<Column name="vend_id" id="E8780A62-1834-CDE7-593D-94B0C0E34FF4">
 <createdBy>nicolas</createdBy>
-<createdTime>2014-04-09 08:33:26 UTC</createdTime>
+<createdTime>2014-04-12 09:57:19 UTC</createdTime>
 <generatorID>Généré par l&apos;utilisateur</generatorID>
 <ownerDesignName>bdd</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>2</dataTypePrecision>
+<dataTypePrecision>3</dataTypePrecision>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Commande_com_numero" id="D2B1AE60-6571-B20E-34DE-B580589B9D54">
+<Column name="Produit_prod_id" id="34ACAA65-3547-1E5A-AC97-846BB297E89F">
 <createdBy>nicolas</createdBy>
-<createdTime>2014-04-09 08:33:35 UTC</createdTime>
-<generatorID>Généré par l&apos;utilisateur</generatorID>
-<ownerDesignName>bdd</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<delegate>C08EB52B-6E8D-74EA-116A-6AD767B3FA20</delegate>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="181B1301-5281-82D2-5F89-D5F025237BF5" referredColumn="C08EB52B-6E8D-74EA-116A-6AD767B3FA20"/>
-</associations>
-</Column>
-<Column name="Produit_prod_id" id="1261230E-353B-6F18-10CD-CB731F5376C6">
-<createdBy>nicolas</createdBy>
-<createdTime>2014-04-09 08:34:06 UTC</createdTime>
+<createdTime>2014-04-12 09:57:36 UTC</createdTime>
 <generatorID>Généré par l&apos;utilisateur</generatorID>
 <ownerDesignName>bdd</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -46,43 +31,70 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="46828491-99A7-D4D7-9BD0-E9CD2E7CA560" referredColumn="A2B36760-B204-B8A7-76EE-BA64E711E62F"/>
+<colAssociation fkAssociation="164AFCD7-6278-E90A-E027-786CF623B8D5" referredColumn="A2B36760-B204-B8A7-76EE-BA64E711E62F"/>
 </associations>
+</Column>
+<Column name="Vendeur_vend_id" id="0390D36D-0E85-B8E9-F797-9DAFD7AB3A98">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-12 09:57:45 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<delegate>2C32F8C9-F65F-9E91-94EE-95071DB32745</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DF80E54C-836F-BCC6-9125-3270ACBFC9D6" referredColumn="2C32F8C9-F65F-9E91-94EE-95071DB32745"/>
+</associations>
+</Column>
+<Column name="vend_prix" id="92E55089-D7FA-CCAC-42D2-C2E89749E367">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-12 10:03:44 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="07EEC7DF-3F3C-1D11-9C0D-A369B17AE437" name="LigneCommande_PK">
+<ind_PK_UK id="4264E8ED-353F-BE0D-BACF-7CFC1C37E82D" name="TABLE_16_PK">
 <createdBy>nicolas</createdBy>
-<createdTime>2014-04-09 08:33:26 UTC</createdTime>
+<createdTime>2014-04-12 09:57:19 UTC</createdTime>
 <generatorID>Généré par l&apos;utilisateur</generatorID>
 <ownerDesignName>bdd</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="8730A727-16F7-FDC8-0099-F9723AF4571C"/>
+<colUsage columnID="E8780A62-1834-CDE7-593D-94B0C0E34FF4"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="5AC3F009-4E9A-3F9D-D6C7-41176682823D" name="LigneCommande_Commande_FK">
+<ind_PK_UK id="70B004AC-60FE-6F66-ECE9-96487422B90B" name="Vend_Produit_FK">
 <createdBy>nicolas</createdBy>
-<createdTime>2014-04-09 08:33:35 UTC</createdTime>
+<createdTime>2014-04-12 09:57:36 UTC</createdTime>
 <generatorID>Généré par l&apos;utilisateur</generatorID>
 <ownerDesignName>bdd</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="D2B1AE60-6571-B20E-34DE-B580589B9D54"/>
+<colUsage columnID="34ACAA65-3547-1E5A-AC97-846BB297E89F"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="FCBBE29D-0F46-24F1-9789-1ECE25724473" name="LigneCommande_Produit_FK">
+<ind_PK_UK id="E9F71B73-8DA3-2180-96B0-16A86125B633" name="Vend_Vendeur_FK">
 <createdBy>nicolas</createdBy>
-<createdTime>2014-04-09 08:34:06 UTC</createdTime>
+<createdTime>2014-04-12 09:57:45 UTC</createdTime>
 <generatorID>Généré par l&apos;utilisateur</generatorID>
 <ownerDesignName>bdd</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="1261230E-353B-6F18-10CD-CB731F5376C6"/>
+<colUsage columnID="0390D36D-0E85-B8E9-F797-9DAFD7AB3A98"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

@@ -1,15 +1,15 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B1B2A85F-BC2D-53FB-2C87-556B1B1BC33F" name="Etat">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D39E40A3-0273-61E6-A701-E23C3036DBFC" name="StyleMusical">
 <createdBy>nicolas</createdBy>
-<createdTime>2014-04-09 08:41:45 UTC</createdTime>
+<createdTime>2014-04-12 10:38:41 UTC</createdTime>
 <generatorID>Généré par l&apos;utilisateur</generatorID>
 <ownerDesignName>bdd</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="etat_id" id="1E78D86B-81B4-00C9-FE21-56BECEF73D43">
+<Column name="music_id" id="E5D2EDDB-3C9E-1582-256A-E0EF2D89CF35">
 <createdBy>nicolas</createdBy>
-<createdTime>2014-04-09 08:42:03 UTC</createdTime>
+<createdTime>2014-04-12 10:39:25 UTC</createdTime>
 <generatorID>Généré par l&apos;utilisateur</generatorID>
 <ownerDesignName>bdd</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -18,30 +18,30 @@
 <dataTypePrecision>2</dataTypePrecision>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="etat_libelle" id="77AD4AC5-C9A4-ED1D-919B-0971E1FF56A0">
+<Column name="music_libelle" id="B31B1163-527D-BD6C-0A72-FB9E52977F73">
 <createdBy>nicolas</createdBy>
-<createdTime>2014-04-09 09:05:24 UTC</createdTime>
+<createdTime>2014-04-12 10:39:50 UTC</createdTime>
 <generatorID>Généré par l&apos;utilisateur</generatorID>
 <ownerDesignName>bdd</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT037</logicalDatatype>
-<dataTypeSize>50</dataTypeSize>
+<dataTypeSize>50 CHAR</dataTypeSize>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="49ED89EA-A4B4-356B-9361-75F12C67B2B8" name="Etat_PK">
+<ind_PK_UK id="449AD296-5FFD-6984-8E9F-903C18618BE8" name="StyleMusical_PK">
 <createdBy>nicolas</createdBy>
-<createdTime>2014-04-09 08:42:03 UTC</createdTime>
+<createdTime>2014-04-12 10:39:25 UTC</createdTime>
 <generatorID>Généré par l&apos;utilisateur</generatorID>
 <ownerDesignName>bdd</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="1E78D86B-81B4-00C9-FE21-56BECEF73D43"/>
+<colUsage columnID="E5D2EDDB-3C9E-1582-256A-E0EF2D89CF35"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

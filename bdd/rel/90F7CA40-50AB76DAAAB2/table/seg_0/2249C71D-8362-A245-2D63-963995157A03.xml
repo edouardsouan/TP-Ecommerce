@@ -1,31 +1,26 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="CEDAA4D4-252C-FA23-7135-015FC09CAF4C" name="Commande">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="2249C71D-8362-A245-2D63-963995157A03" name="LignePanier">
 <createdBy>nicolas</createdBy>
-<createdTime>2014-04-09 08:29:33 UTC</createdTime>
+<createdTime>2014-04-12 10:11:42 UTC</createdTime>
 <generatorID>Généré par l&apos;utilisateur</generatorID>
 <ownerDesignName>bdd</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="Livraison_livr_id" id="2FB7379B-3A4C-69F1-8BBA-8DC682EEB12F">
+<Column name="ligne_id" id="715CCC5F-36B8-8DEA-C3E5-58DC2DA3D594">
 <createdBy>nicolas</createdBy>
-<createdTime>2014-04-12 10:06:17 UTC</createdTime>
+<createdTime>2014-04-12 10:12:08 UTC</createdTime>
 <generatorID>Généré par l&apos;utilisateur</generatorID>
 <ownerDesignName>bdd</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>2</dataTypePrecision>
-<delegate>DB54A17B-849A-D14A-D708-6ECEA5417F7E</delegate>
-<previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="1E5C34AF-112D-EBB7-55D4-4255ECB34577" referredColumn="DB54A17B-849A-D14A-D708-6ECEA5417F7E"/>
-</associations>
 </Column>
-<Column name="Panier_panier_id" id="9172FBC8-CE90-DD8D-1C53-DA39B97E6A8C">
+<Column name="Panier_panier_id" id="0CF9350D-1B19-7DED-4C75-18DD6D358CC2">
 <createdBy>nicolas</createdBy>
-<createdTime>2014-04-12 10:17:24 UTC</createdTime>
+<createdTime>2014-04-12 10:12:31 UTC</createdTime>
 <generatorID>Généré par l&apos;utilisateur</generatorID>
 <ownerDesignName>bdd</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -36,43 +31,59 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="6F38B45B-269D-2398-0A39-C94AFA927215" referredColumn="E87AFAC4-DCE8-6B4D-94AA-A63999312666"/>
+<colAssociation fkAssociation="DF3DC289-FBC4-101B-03EA-DEDF4DBBED07" referredColumn="E87AFAC4-DCE8-6B4D-94AA-A63999312666"/>
+</associations>
+</Column>
+<Column name="Produit_prod_id" id="80FED736-07CB-B7D9-AC37-E44AD90523F0">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-12 10:12:37 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<delegate>A2B36760-B204-B8A7-76EE-BA64E711E62F</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="27DBCA88-23D4-5F0C-891D-1E7A521DFD2B" referredColumn="A2B36760-B204-B8A7-76EE-BA64E711E62F"/>
 </associations>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="0D6CAC28-D964-436F-8A1B-5B16C76E7993" name="Commande_PK">
+<ind_PK_UK id="C65EBCFB-80CC-6798-ACBD-605374765FB4" name="LignePanier_PK">
 <createdBy>nicolas</createdBy>
-<createdTime>2014-04-09 08:30:55 UTC</createdTime>
+<createdTime>2014-04-12 10:12:08 UTC</createdTime>
 <generatorID>Généré par l&apos;utilisateur</generatorID>
 <ownerDesignName>bdd</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="9172FBC8-CE90-DD8D-1C53-DA39B97E6A8C"/>
+<colUsage columnID="715CCC5F-36B8-8DEA-C3E5-58DC2DA3D594"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="E70AAB8B-83DF-F322-98DF-BBEFB4071DEC" name="Commande_Livraison_FK">
+<ind_PK_UK id="F7327BA7-2632-D8A4-29FF-99B30ECEC0E5" name="LignePanier_Panier_FK">
 <createdBy>nicolas</createdBy>
-<createdTime>2014-04-12 10:06:17 UTC</createdTime>
+<createdTime>2014-04-12 10:12:31 UTC</createdTime>
 <generatorID>Généré par l&apos;utilisateur</generatorID>
 <ownerDesignName>bdd</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="2FB7379B-3A4C-69F1-8BBA-8DC682EEB12F"/>
+<colUsage columnID="0CF9350D-1B19-7DED-4C75-18DD6D358CC2"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="1AAC55AD-D616-1447-F139-F87723F6FAD5" name="Commande_Panier_FK">
+<ind_PK_UK id="B5591243-7AEB-901E-03F0-C1ACFD603D74" name="LignePanier_Produit_FK">
 <createdBy>nicolas</createdBy>
-<createdTime>2014-04-12 10:17:24 UTC</createdTime>
+<createdTime>2014-04-12 10:12:37 UTC</createdTime>
 <generatorID>Généré par l&apos;utilisateur</generatorID>
 <ownerDesignName>bdd</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="9172FBC8-CE90-DD8D-1C53-DA39B97E6A8C"/>
+<colUsage columnID="80FED736-07CB-B7D9-AC37-E44AD90523F0"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

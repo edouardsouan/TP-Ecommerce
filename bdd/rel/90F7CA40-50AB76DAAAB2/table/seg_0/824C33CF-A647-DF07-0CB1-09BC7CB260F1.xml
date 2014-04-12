@@ -23,6 +23,22 @@
 <colAssociation fkAssociation="07101E40-F42D-0800-DB60-18AEE653AD7B" referredColumn="A2B36760-B204-B8A7-76EE-BA64E711E62F"/>
 </associations>
 </Column>
+<Column name="StyleMusical_music_id" id="E42A5119-E9E5-F96A-9E16-A2A406F7C7D9">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-12 10:40:17 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<delegate>E5D2EDDB-3C9E-1582-256A-E0EF2D89CF35</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7CAAD474-1002-F2B5-F126-AA9958350FC5" referredColumn="E5D2EDDB-3C9E-1582-256A-E0EF2D89CF35"/>
+</associations>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="E96A8752-266C-4784-A527-2FAABFA940A3" name="CD_PK">
@@ -46,6 +62,17 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="945EDAE4-4E0B-0863-BCC9-A44D5F47FE44"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="41EB9944-36C5-8DE2-DBD4-5EB83A1C1BFC" name="CD_StyleMusical_FK">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-12 10:40:17 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E42A5119-E9E5-F96A-9E16-A2A406F7C7D9"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

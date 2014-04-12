@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="249B480D-0353-F18E-A677-2FB42C494341" name="PointRelais_Livraison_FK">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-12 10:33:02 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<containerWithKeyObject>AE5F2FCD-EFF3-ECA6-54B5-49EC9D5250B4</containerWithKeyObject>
+<deleteRule>NO ACTION</deleteRule>
+<localFKIndex>3479F865-8C61-C8E3-36B5-1005495ECE4A</localFKIndex>
+<keyObject>A9324D4B-B3EE-BA1E-743F-2DB78AB24738</keyObject>
+<mandatory>true</mandatory>
+<transferable>true</transferable>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

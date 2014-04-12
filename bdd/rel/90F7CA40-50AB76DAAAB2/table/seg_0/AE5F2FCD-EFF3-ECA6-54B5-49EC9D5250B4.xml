@@ -1,0 +1,96 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="AE5F2FCD-EFF3-ECA6-54B5-49EC9D5250B4" name="PointRelais">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-12 10:32:49 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Livraison_livr_id" id="67A21FB8-502F-DD92-D997-F3FC2BE83D38">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-12 10:33:02 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<delegate>DB54A17B-849A-D14A-D708-6ECEA5417F7E</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="249B480D-0353-F18E-A677-2FB42C494341" referredColumn="DB54A17B-849A-D14A-D708-6ECEA5417F7E"/>
+</associations>
+</Column>
+<Column name="point_nom" id="7C391C9D-89DB-9CCA-2D67-5929E8FA53B8">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-12 10:33:32 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Adresse_adr_id" id="E2A62694-153A-D3E7-4223-D2DDDAD43A20">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-12 10:33:37 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<delegate>2BEA88E7-1F12-0990-D3BD-6CBB9016738E</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="585D6FA2-8A0C-66F8-CAC7-BECC42251C88" referredColumn="2BEA88E7-1F12-0990-D3BD-6CBB9016738E"/>
+</associations>
+</Column>
+<Column name="Adresse_adr_cp" id="51D3B463-E7DB-1DBB-E7BF-BBC953A96F6A">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-12 10:33:37 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<delegate>2702475A-8030-A3F2-3426-B6354238EF78</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="585D6FA2-8A0C-66F8-CAC7-BECC42251C88" referredColumn="2702475A-8030-A3F2-3426-B6354238EF78"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="3479F865-8C61-C8E3-36B5-1005495ECE4A" name="PointRelais_Livraison_FK">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-12 10:33:02 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="67A21FB8-502F-DD92-D997-F3FC2BE83D38"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="683014E1-E01F-8C73-3870-4D63299B7D65" name="PointRelais_Adresse_FK">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-12 10:33:37 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E2A62694-153A-D3E7-4223-D2DDDAD43A20"/>
+<colUsage columnID="51D3B463-E7DB-1DBB-E7BF-BBC953A96F6A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
