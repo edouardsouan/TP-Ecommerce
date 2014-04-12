@@ -10,5 +10,13 @@ BEGIN
     END LOOP;
 END;
 
-#Ajout d'un client
-CREATE OR REPLACE PROCEDURE nouveauClient()
+#Ajout d'un genre de livre
+CREATE OR REPLACE PROCEDURE nouveauGenre(pGenre IN GENRE.genre_id%TYPE)
+IS
+BEGIN 
+	INSERT INTO Genre(genre_id, genre_libelle)
+	VALUES(seq_genre.nextval, pGenre);
+END;
+
+CALL nouveauGenre("Aaventure");
+CALL nouveauGenre("Aaventure");

@@ -51,22 +51,6 @@
 <colAssociation fkAssociation="585D6FA2-8A0C-66F8-CAC7-BECC42251C88" referredColumn="2BEA88E7-1F12-0990-D3BD-6CBB9016738E"/>
 </associations>
 </Column>
-<Column name="Adresse_adr_cp" id="51D3B463-E7DB-1DBB-E7BF-BBC953A96F6A">
-<createdBy>nicolas</createdBy>
-<createdTime>2014-04-12 10:33:37 UTC</createdTime>
-<generatorID>Généré par l&apos;utilisateur</generatorID>
-<ownerDesignName>bdd</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>5</dataTypePrecision>
-<delegate>2702475A-8030-A3F2-3426-B6354238EF78</delegate>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="585D6FA2-8A0C-66F8-CAC7-BECC42251C88" referredColumn="2702475A-8030-A3F2-3426-B6354238EF78"/>
-</associations>
-</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="3479F865-8C61-C8E3-36B5-1005495ECE4A" name="PointRelais_Livraison_FK">
@@ -89,7 +73,6 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="E2A62694-153A-D3E7-4223-D2DDDAD43A20"/>
-<colUsage columnID="51D3B463-E7DB-1DBB-E7BF-BBC953A96F6A"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

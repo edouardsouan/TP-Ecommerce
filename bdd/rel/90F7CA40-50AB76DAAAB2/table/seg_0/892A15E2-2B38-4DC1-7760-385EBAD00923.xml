@@ -109,7 +109,6 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="2BEA88E7-1F12-0990-D3BD-6CBB9016738E"/>
-<colUsage columnID="2702475A-8030-A3F2-3426-B6354238EF78"/>
 </indexColumnUsage>
 </ind_PK_UK>
 <ind_PK_UK id="4E940AC8-090B-FDBE-5803-0AD0462F4EE2" name="Adresse_Client_FK">
