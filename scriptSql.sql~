@@ -24,7 +24,7 @@ CREATE OR REPLACE TABLE CB
     Client_cli_id NUMBER (2) NOT NULL ,
     cb_numero     NUMBER (16) ,
     cb_secu       NUMBER (3) ,
-    cb_date       VARCHAR2 (5)
+    cb_date       DATE
   ) ;
 ALTER TABLE CB ADD CONSTRAINT CB_PK PRIMARY KEY ( cb_id ) ;
 
