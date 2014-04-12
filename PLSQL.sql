@@ -56,5 +56,43 @@ BEGIN
       DBMS_OUTPUT.PUT_LINE('Le numéro de la carte est incorrect. Veuillez vérifier la valeur saisie.');
 END;
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
+--Ajout des types d'adresses
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+create or replace PROCEDURE ADDTYPEADRESSE(p_LibTypeAdr TYPEADRESSE.ADRTYPE_LIBELLE%TYPE)
+AS
+BEGIN
+  INSERT INTO TYPEADRESSE (ADRTYPE_ID,ADRTYPE_LIBELLE)
+  VALUES(SEQ_TYPEADRESSE.NEXTVAL,p_LibTypeAdr);
+END;
 
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+--Ajout d'une adresse
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+create or replace PROCEDURE AddAdresse(p_IDUSER CLIENT.CLI_ID%TYPE, p_AD1 ADRESSE.ADR_ADRESSE1%TYPE,p_AD2 ADRESSE.ADR_ADRESSE2%TYPE, p_CP ADRESSE.ADR_CP%TYPE, p_VILLE ADRESSE.ADR_VILLE%TYPE, p_TYPEADR IN VARCHAR2)
+AS
+  vIDTypeAdr ADRESSE.ADR_ID%TYPE := 0;
+  CURSOR cTypeAdr IS SELECT ADRTYPE_ID INTO vIDTypeAdr FROM TYPEADRESSE WHERE ADRTYPE_LIBELLE = p_TYPEADR;
+  TypeAdr_NOT_FOUND EXCEPTION;
+  
+BEGIN
+  --Vérifiacation du type d'adresse renseigné--
+  OPEN cTypeAdr;
+  LOOP
+    FETCH cTypeAdr INTO vIDTypeAdr;
+    EXIT WHEN cTypeAdr%NOTFOUND;
+  END LOOP;
+  CLOSE cTypeAdr;
+  IF vIDTypeAdr = 0 THEN 
+    RAISE TypeAdr_NOT_FOUND;
+  END IF;
+  --Ajout de l'adresse--
+  INSERT INTO ADRESSE(ADR_ID, CLIENT_CLI_ID, ADR_ADRESSE1, ADR_ADRESSE2, ADR_CP,ADR_VILLE,TYPEADRESSE_ADRTYPE_ID)
+  VALUES(SEQ_ADRESSE.NEXTVAL,p_IDUSER,p_AD1,p_AD2,p_CP,p_VILLE,vIDTypeAdr);
+  
+  --EXCEPTIONS--
+  EXCEPTION
+    WHEN TypeAdr_NOT_FOUND THEN
+        DBMS_OUTPUT.PUT_LINE('Le type de l adresse n existe pas. Veuillez vérifier la valeur saisie.');
+END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------
