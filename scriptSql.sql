@@ -80,7 +80,7 @@ CREATE TABLE Piste
   (
     pist_id            NUMBER NOT NULL ,
     CD_Produit_prod_id NUMBER (2) NOT NULL ,
-    pis_titre NVARCHAR2 ,
+    pis_titre NVARCHAR2(50) ,
     pist_duree NUMBER (4)
   ) ;
 ALTER TABLE Piste ADD CONSTRAINT Piste_PK PRIMARY KEY ( pist_id ) ;
@@ -89,7 +89,7 @@ CREATE TABLE Produit
   (
     prod_id      NUMBER (2) NOT NULL ,
     TVA_tva_code NUMBER (2) NOT NULL ,
-    prod_nom NVARCHAR2 ,
+    prod_nom NVARCHAR2 (50),
     prod_description CLOB
   ) ;
 ALTER TABLE Produit ADD CONSTRAINT Produit_PK PRIMARY KEY ( prod_id ) ;
@@ -124,39 +124,47 @@ ALTER TABLE Piste ADD CONSTRAINT Piste_CD_FK FOREIGN KEY ( CD_Produit_prod_id ) 
 ALTER TABLE Produit ADD CONSTRAINT Produit_TVA_FK FOREIGN KEY ( TVA_tva_code ) REFERENCES TVA ( tva_code ) ;
 
 
--- Rapport récapitulatif d'Oracle SQL Developer Data Modeler : 
--- 
--- CREATE TABLE                            12
--- CREATE INDEX                             0
--- ALTER TABLE                             23
--- CREATE VIEW                              0
--- CREATE PACKAGE                           0
--- CREATE PACKAGE BODY                      0
--- CREATE PROCEDURE                         0
--- CREATE FUNCTION                          0
--- CREATE TRIGGER                           0
--- ALTER TRIGGER                            0
--- CREATE COLLECTION TYPE                   0
--- CREATE STRUCTURED TYPE                   0
--- CREATE STRUCTURED TYPE BODY              0
--- CREATE CLUSTER                           0
--- CREATE CONTEXT                           0
--- CREATE DATABASE                          0
--- CREATE DIMENSION                         0
--- CREATE DIRECTORY                         0
--- CREATE DISK GROUP                        0
--- CREATE ROLE                              0
--- CREATE ROLLBACK SEGMENT                  0
--- CREATE SEQUENCE                          0
--- CREATE MATERIALIZED VIEW                 0
--- CREATE SYNONYM                           0
--- CREATE TABLESPACE                        0
--- CREATE USER                              0
--- 
--- DROP TABLESPACE                          0
--- DROP DATABASE                            0
--- 
--- REDACTION POLICY                         0
--- 
--- ERRORS                                   0
--- WARNINGS                                 0
+CREATE SEQUENCE seq_client
+START WITH 1
+INCREMENT BY 1
+NOMAXVALUE:
+
+CREATE SEQUENCE seq_cb
+START WITH 1
+INCREMENT BY 1
+NOMAXVALUE;
+
+CREATE SEQUENCE seq_adresse
+START WITH 1
+INCREMENT BY 1
+NOMAXVALUE;
+
+CREATE SEQUENCE seq_commande
+START WITH 1
+INCREMENT BY 1
+NOMAXVALUE;
+
+CREATE SEQUENCE seq_etat
+START WITH 1
+INCREMENT BY 1
+NOMAXVALUE;
+
+CREATE SEQUENCE seq_etatCommande
+START WITH 1
+INCREMENT BY 1
+NOMAXVALUE;
+
+CREATE SEQUENCE seq_ligneCommande
+START WITH 1
+INCREMENT BY 1
+NOMAXVALUE;
+
+CREATE SEQUENCE seq_piste
+START WITH 1
+INCREMENT BY 1
+NOMAXVALUE;
+
+CREATE SEQUENCE seq_produit
+START WITH 1
+INCREMENT BY 1
+NOMAXVALUE;
