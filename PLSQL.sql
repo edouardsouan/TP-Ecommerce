@@ -129,3 +129,119 @@ EXCEPTION
   
 END;
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Ajout d'un genre de livre
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+CREATE OR REPLACE PROCEDURE nouveauGenre(pGenre IN GENRE.genre_libelle%TYPE)
+IS
+BEGIN 
+	INSERT INTO Genre(genre_id, genre_libelle)
+	VALUES(seq_genre.nextval, pGenre);
+END;
+
+#Ajout d'un style musical
+CREATE OR REPLACE PROCEDURE nouveauStyle(pStyle IN StyleMusical.music_libelle%TYPE)
+IS 
+BEGIN
+  INSERT INTO StyleMusical(music_id, music_libelle)
+  VALUES(seq_style.nextval, pStyle);
+END;
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Ajout d'un livre
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+CREATE OR REPLACE PROCEDURE nouveauLivre(pTVA IN TVA.tva_code%TYPE, pNom IN PRODUIT.prod_nom%TYPE, pDescription IN PRODUIT.prod_description%type, pNbPages IN LIVRE.liv_nbPages%TYPE, pEditeur IN EDITEUR.edit_id%TYPE, pAuteur IN LIVRE.liv_auteur%TYPE, pGenre IN GENRE.genre_libelle%TYPE)
+IS 
+prodId NUMBER;
+BEGIN
+  prodId := seq_produit.nextval;
+  INSERT INTO PRODUIT(prod_id, TVA_tva_code, prod_nom, prod_description)
+  VALUES(prodId, pTVA, pNom,  pDescription);
+
+  INSERT INTO LIVRE(PRODUIT_prod_id, liv_nbPages, EDITEUR_edit_id, liv_auteur, Genre_genre_id)
+  VALUES(prodId, pNbPages, pEditeur, pAuteur, pGenre);
+
+END;
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Ajout d'un cd
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+CREATE OR REPLACE PROCEDURE nouveauCD(pTVA IN TVA.tva_code%TYPE, pNom IN PRODUIT.prod_nom%TYPE, pDescription IN PRODUIT.prod_description%TYPE, pStyle IN StyleMusical.music_id%TYPE, pArtiste IN CD.music_artiste%TYPE)
+IS
+  prodId NUMBER;
+BEGIN
+  prodId := seq_produit.nextval;
+  INSERT INTO PRODUIT(prod_id, TVA_tva_code, prod_nom, prod_description)
+  VALUES(prodId, pTVA, pNom,  pDescription);
+
+  INSERT INTO CD(PRODUIT_prod_id, StyleMusical_music_id, cd_artiste)
+  VALUES(prodId, pStyle, pArtiste);
+END;
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Ajout d'une piste d'un cd
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+CREATE OR REPLACE PROCEDURE nouvellePiste(pIdCd IN PRODUIT.prod_id%TYPE, pTitre IN PISTE.pis_titre%TYPE, pDuree IN PISTE.pist_duree%TYPE)
+IS 
+BEGIN
+  INSERT INTO PISTE(pist_id, CD_PRODUIT_prod_id, pis_titre, pist_duree)
+  VALUES(seq_piste.nextval, pIdCd, pTitre, pDuree);
+END;
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Ajout d'un vendeur
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+CREATE OR REPLACE PROCEDURE nouveauVendeur(pNom IN VENDEUR.vend_nom%TYPE)
+IS 
+BEGIN
+  INSERT INTO VENDEUR(vend_id, vend_nom)
+  VALUES(seq_vendeur.nextval, pNom);
+END;
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Association Vendeur / Produit
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+CREATE OR REPLACE PROCEDURE vendeurVendProduit(pIdProduit IN PRODUIT.prod_id%TYPE, pIdVendeur IN VENDEUR.vend_id%TYPE, pPrix IN VEND.vend_prix%TYPE)
+IS 
+BEGIN
+  INSERT INTO VEND(vend_id, PRODUIT_prod_id, VENDEUR_vend_id, vend_prix)
+  VALUES(seq_vend.nextval, pIdProduit, pIdVendeur, pPrix);
+END;
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Ajout d'une TVA
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+CREATE OR REPLACE PROCEDURE nouvelleTVA(pTaux IN TVA.tva_taux%TYPE)
+IS 
+BEGIN
+  INSERT INTO TVA(tva_code, tva_taux)
+  VALUES(seq_tva.nextval, pTaux);
+END;
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Ajout d'un éditeur
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+CREATE OR REPLACE PROCEDURE nouveauEditeur(pNom IN EDITEUR.edit_nom%TYPE)
+IS
+BEGIN
+  INSERT INTO EDITEUR(edit_id, edit_nom)
+  VALUES(seq_editeur.nextval, pNom);
+END;
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Ajout d'un été de commande
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+CREATE OR REPLACE PROCEDURE nouvelEtat(pLibelle IN ETAT.etat_libelle%TYPE)
+IS 
+BEGIN
+	INSERT INTO ETAT(etat_id, etat_libelle)
+	VALUES(seq_etat.nextval, pLibelle);
+END;
+
+CREATE OR REPLACE PROCEDURE noterVendeur(pNote IN NOTEVENDEUR.note_valeur%TYPE, pIdClient IN CLIENT.cli_id%TYPE, pIdVendeur IN VENDEUR.vend_id%TYPE)
+IS
+BEGIN
+	INSERT INTO NOTEVENDEUR(note_id, note_valeur, Client_cli_id, VENDEUR_vend_id)
+	VALUES(seq_notevendeur.nextval, pNote, pIdClient, pIdVendeur);
+END;
