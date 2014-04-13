@@ -57,6 +57,18 @@
 <dataTypePrecision>4</dataTypePrecision>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="pis_numero" id="E86265B9-AFDA-1A5C-5628-F16FE3AF50C9">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-13 16:07:29 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="D1D5502A-C843-7DEB-3446-A5DC3558D10B" name="Piste_PK">

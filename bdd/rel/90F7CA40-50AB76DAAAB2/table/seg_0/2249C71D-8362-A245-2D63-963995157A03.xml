@@ -34,20 +34,32 @@
 <colAssociation fkAssociation="DF3DC289-FBC4-101B-03EA-DEDF4DBBED07" referredColumn="E87AFAC4-DCE8-6B4D-94AA-A63999312666"/>
 </associations>
 </Column>
-<Column name="Produit_prod_id" id="80FED736-07CB-B7D9-AC37-E44AD90523F0">
+<Column name="quantite" id="4D2E5430-C225-A0AB-CF2D-013A88AFF5A6">
 <createdBy>nicolas</createdBy>
-<createdTime>2014-04-12 10:12:37 UTC</createdTime>
+<createdTime>2014-04-13 15:58:30 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Vend_vend_id" id="D8D05633-DDDE-EE9C-80EA-B907C4DBEBA8">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-13 16:05:38 UTC</createdTime>
 <generatorID>Généré par l&apos;utilisateur</generatorID>
 <ownerDesignName>bdd</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>2</dataTypePrecision>
-<delegate>A2B36760-B204-B8A7-76EE-BA64E711E62F</delegate>
+<dataTypePrecision>3</dataTypePrecision>
+<delegate>E8780A62-1834-CDE7-593D-94B0C0E34FF4</delegate>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="27DBCA88-23D4-5F0C-891D-1E7A521DFD2B" referredColumn="A2B36760-B204-B8A7-76EE-BA64E711E62F"/>
+<colAssociation fkAssociation="5020218E-76A4-EA88-8853-57AC530D30AD" referredColumn="E8780A62-1834-CDE7-593D-94B0C0E34FF4"/>
 </associations>
 </Column>
 </columns>
@@ -75,15 +87,15 @@
 <colUsage columnID="0CF9350D-1B19-7DED-4C75-18DD6D358CC2"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="B5591243-7AEB-901E-03F0-C1ACFD603D74" name="LignePanier_Produit_FK">
+<ind_PK_UK id="7A027B33-2829-300A-ED6F-C4E3CF9CB9AA" name="LignePanier_Vend_FK">
 <createdBy>nicolas</createdBy>
-<createdTime>2014-04-12 10:12:37 UTC</createdTime>
+<createdTime>2014-04-13 16:05:37 UTC</createdTime>
 <generatorID>Généré par l&apos;utilisateur</generatorID>
 <ownerDesignName>bdd</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="80FED736-07CB-B7D9-AC37-E44AD90523F0"/>
+<colUsage columnID="D8D05633-DDDE-EE9C-80EA-B907C4DBEBA8"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

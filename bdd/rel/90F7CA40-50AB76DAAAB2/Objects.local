@@ -35,9 +35,9 @@
    <object objectType="FKIndexAssociation" objectID="32C0B700-9DC3-F713-3E11-EE5241829340" name="Domicile_Livraison_FK" seqName="seg_0"/>
    <object objectType="FKIndexAssociation" objectID="E0343AA7-D610-4291-CC3D-6757961A0E50" name="Panier_Client_FK" seqName="seg_0"/>
    <object objectType="FKIndexAssociation" objectID="07101E40-F42D-0800-DB60-18AEE653AD7B" name="CD_Produit_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="5020218E-76A4-EA88-8853-57AC530D30AD" name="LignePanier_Vend_FK" seqName="seg_0"/>
    <object objectType="FKIndexAssociation" objectID="6F38B45B-269D-2398-0A39-C94AFA927215" name="Commande_Panier_FK" seqName="seg_0"/>
    <object objectType="FKIndexAssociation" objectID="4D9AD036-233C-BB23-3EE0-90452838B4C0" name="NoteProduit_Client_FK" seqName="seg_0"/>
-   <object objectType="FKIndexAssociation" objectID="27DBCA88-23D4-5F0C-891D-1E7A521DFD2B" name="LignePanier_Produit_FK" seqName="seg_0"/>
    <object objectType="FKIndexAssociation" objectID="DF3DC289-FBC4-101B-03EA-DEDF4DBBED07" name="LignePanier_Panier_FK" seqName="seg_0"/>
    <object objectType="FKIndexAssociation" objectID="0DC11C82-4CB1-9DDA-6AAF-E7D5AFE64865" name="Piste_CD_FK" seqName="seg_0"/>
    <object objectType="FKIndexAssociation" objectID="59BB0668-AF9D-0344-C1A0-3499AB374F7E" name="Livre_Genre_FK" seqName="seg_0"/>

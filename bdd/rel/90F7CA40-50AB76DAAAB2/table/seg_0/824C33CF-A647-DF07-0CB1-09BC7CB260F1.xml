@@ -39,6 +39,18 @@
 <colAssociation fkAssociation="7CAAD474-1002-F2B5-F126-AA9958350FC5" referredColumn="E5D2EDDB-3C9E-1582-256A-E0EF2D89CF35"/>
 </associations>
 </Column>
+<Column name="cd_artiste" id="A56819B0-E589-67D4-8CF6-116B04D5ADAA">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-13 12:49:09 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="E96A8752-266C-4784-A527-2FAABFA940A3" name="CD_PK">

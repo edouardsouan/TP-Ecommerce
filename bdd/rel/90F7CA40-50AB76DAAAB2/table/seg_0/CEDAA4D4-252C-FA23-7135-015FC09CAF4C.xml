@@ -39,6 +39,18 @@
 <colAssociation fkAssociation="6F38B45B-269D-2398-0A39-C94AFA927215" referredColumn="E87AFAC4-DCE8-6B4D-94AA-A63999312666"/>
 </associations>
 </Column>
+<Column name="commande_date" id="7B7FBBBF-F240-4540-D55F-BCE2155A089A">
+<createdBy>nicolas</createdBy>
+<createdTime>2014-04-13 13:03:40 UTC</createdTime>
+<generatorID>Généré par l&apos;utilisateur</generatorID>
+<ownerDesignName>bdd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="0D6CAC28-D964-436F-8A1B-5B16C76E7993" name="Commande_PK">
