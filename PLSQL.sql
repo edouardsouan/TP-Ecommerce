@@ -8,7 +8,7 @@ set define off;
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 --Ajout d'un client
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
-  CREATE OR REPLACE PROCEDURE "ECOMMERCE"."ADDUSER" (p_CliNom CLIENT.CLI_NOM%TYPE,p_CliPrenom CLIENT.CLI_PRENOM%TYPE,p_Cli_MAIL CLIENT.CLI_MAIL%TYPE,p_CliPwd CLIENT.CLI_MOTDEPASSE%TYPE ) AS
+  CREATE OR REPLACE PROCEDURE ADDUSER (p_CliNom CLIENT.CLI_NOM%TYPE,p_CliPrenom CLIENT.CLI_PRENOM%TYPE,p_Cli_MAIL CLIENT.CLI_MAIL%TYPE,p_CliPwd CLIENT.CLI_MOTDEPASSE%TYPE ) AS
 BEGIN
 INSERT INTO CLIENT(CLI_ID,CLI_NOM,CLI_PRENOM,CLI_MAIL,CLI_MOTDEPASSE)
 VALUES(SEQ_CLIENT.NEXTVAL,p_CliNom,p_CliPrenom,p_Cli_MAIL,p_CliPwd);
@@ -55,6 +55,7 @@ BEGIN
     WHEN WrongCBNumber THEN
       DBMS_OUTPUT.PUT_LINE('Le numéro de la carte est incorrect. Veuillez vérifier la valeur saisie.');
 END;
+/
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 --Ajout des types d'adresses
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -64,7 +65,7 @@ BEGIN
   INSERT INTO TYPEADRESSE (ADRTYPE_ID,ADRTYPE_LIBELLE)
   VALUES(SEQ_TYPEADRESSE.NEXTVAL,p_LibTypeAdr);
 END;
-
+/
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 --Ajout d'une adresse
@@ -95,7 +96,7 @@ BEGIN
     WHEN TypeAdr_NOT_FOUND THEN
         DBMS_OUTPUT.PUT_LINE('Le type de l adresse n existe pas. Veuillez vérifier la valeur saisie.');
 END;
-
+/
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 --Authentification d'un utilisateur
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -128,10 +129,11 @@ EXCEPTION
     DBMS_OUTPUT.PUT_LINE('La combinaison du mail et du mot de passe renseignés est incorrecte.');
   
 END;
-------------------------------------------------------------------------------------------------------------------------------------------------------------
+/
+
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
-#Ajout d'un genre de livre
+--Ajout d'un genre de livre
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 CREATE OR REPLACE PROCEDURE nouveauGenre(pGenre IN GENRE.genre_libelle%TYPE)
 IS
@@ -139,17 +141,20 @@ BEGIN
 	INSERT INTO Genre(genre_id, genre_libelle)
 	VALUES(seq_genre.nextval, pGenre);
 END;
+/
 
-#Ajout d'un style musical
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+--Ajout d'un style musical
+------------------------------------------------------------------------------------------------------------------------------------------------------------
 CREATE OR REPLACE PROCEDURE nouveauStyle(pStyle IN StyleMusical.music_libelle%TYPE)
 IS 
 BEGIN
   INSERT INTO StyleMusical(music_id, music_libelle)
   VALUES(seq_style.nextval, pStyle);
 END;
-
+/
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
-#Ajout d'un livre
+--Ajout d'un livre
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 CREATE OR REPLACE PROCEDURE nouveauLivre(pTVA IN TVA.tva_code%TYPE, pNom IN PRODUIT.prod_nom%TYPE, pDescription IN PRODUIT.prod_description%type, pNbPages IN LIVRE.liv_nbPages%TYPE, pEditeur IN EDITEUR.edit_id%TYPE, pAuteur IN LIVRE.liv_auteur%TYPE, pGenre IN GENRE.genre_libelle%TYPE)
 IS 
@@ -163,11 +168,11 @@ BEGIN
   VALUES(prodId, pNbPages, pEditeur, pAuteur, pGenre);
 
 END;
-
+/
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
-#Ajout d'un cd
+--Ajout d'un cd
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
-CREATE OR REPLACE PROCEDURE nouveauCD(pTVA IN TVA.tva_code%TYPE, pNom IN PRODUIT.prod_nom%TYPE, pDescription IN PRODUIT.prod_description%TYPE, pStyle IN StyleMusical.music_id%TYPE, pArtiste IN CD.music_artiste%TYPE)
+CREATE OR REPLACE PROCEDURE nouveauCD(pTVA IN TVA.tva_code%TYPE, pNom IN PRODUIT.prod_nom%TYPE, pDescription IN PRODUIT.prod_description%TYPE, pStyle IN StyleMusical.music_id%TYPE, pArtiste IN CD.cd_artiste%TYPE)
 IS
   prodId NUMBER;
 BEGIN
@@ -178,9 +183,9 @@ BEGIN
   INSERT INTO CD(PRODUIT_prod_id, StyleMusical_music_id, cd_artiste)
   VALUES(prodId, pStyle, pArtiste);
 END;
-
+/
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
-#Ajout d'une piste d'un cd
+--Ajout d'une piste d'un cd
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 CREATE OR REPLACE PROCEDURE nouvellePiste(pIdCd IN PRODUIT.prod_id%TYPE, pTitre IN PISTE.pis_titre%TYPE, pDuree IN PISTE.pist_duree%TYPE)
 IS 
@@ -188,9 +193,9 @@ BEGIN
   INSERT INTO PISTE(pist_id, CD_PRODUIT_prod_id, pis_titre, pist_duree)
   VALUES(seq_piste.nextval, pIdCd, pTitre, pDuree);
 END;
-
+/
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
-#Ajout d'un vendeur
+--Ajout d'un vendeur
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 CREATE OR REPLACE PROCEDURE nouveauVendeur(pNom IN VENDEUR.vend_nom%TYPE)
 IS 
@@ -198,9 +203,9 @@ BEGIN
   INSERT INTO VENDEUR(vend_id, vend_nom)
   VALUES(seq_vendeur.nextval, pNom);
 END;
-
+/
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
-#Association Vendeur / Produit
+--Association Vendeur / Produit
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 CREATE OR REPLACE PROCEDURE vendeurVendProduit(pIdProduit IN PRODUIT.prod_id%TYPE, pIdVendeur IN VENDEUR.vend_id%TYPE, pPrix IN VEND.vend_prix%TYPE)
 IS 
@@ -208,9 +213,9 @@ BEGIN
   INSERT INTO VEND(vend_id, PRODUIT_prod_id, VENDEUR_vend_id, vend_prix)
   VALUES(seq_vend.nextval, pIdProduit, pIdVendeur, pPrix);
 END;
-
+/
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
-#Ajout d'une TVA
+--Ajout d'une TVA
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 CREATE OR REPLACE PROCEDURE nouvelleTVA(pTaux IN TVA.tva_taux%TYPE)
 IS 
@@ -218,9 +223,9 @@ BEGIN
   INSERT INTO TVA(tva_code, tva_taux)
   VALUES(seq_tva.nextval, pTaux);
 END;
-
+/
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
-#Ajout d'un éditeur
+--Ajout d'un éditeur
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 CREATE OR REPLACE PROCEDURE nouveauEditeur(pNom IN EDITEUR.edit_nom%TYPE)
 IS
@@ -228,9 +233,9 @@ BEGIN
   INSERT INTO EDITEUR(edit_id, edit_nom)
   VALUES(seq_editeur.nextval, pNom);
 END;
-
+/
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
-#Ajout d'un été de commande
+--Ajout d'un été de commande
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 CREATE OR REPLACE PROCEDURE nouvelEtat(pLibelle IN ETAT.etat_libelle%TYPE)
 IS 
@@ -238,6 +243,11 @@ BEGIN
 	INSERT INTO ETAT(etat_id, etat_libelle)
 	VALUES(seq_etat.nextval, pLibelle);
 END;
+/
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+--Association note / Client / Vendeur
+------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 CREATE OR REPLACE PROCEDURE noterVendeur(pNote IN NOTEVENDEUR.note_valeur%TYPE, pIdClient IN CLIENT.cli_id%TYPE, pIdVendeur IN VENDEUR.vend_id%TYPE)
 IS
@@ -245,3 +255,32 @@ BEGIN
 	INSERT INTO NOTEVENDEUR(note_id, note_valeur, Client_cli_id, VENDEUR_vend_id)
 	VALUES(seq_notevendeur.nextval, pNote, pIdClient, pIdVendeur);
 END;
+/
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+--Affichage de tous les CD
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create or replace PROCEDURE catalogueCD
+IS
+    CURSOR listeCd IS   SELECT PROD_NOM, PROD_DESCRIPTION, MUSIC_LIBELLE, CD_ARTISTE FROM PRODUIT
+  INNER JOIN CD ON CD.PRODUIT_PROD_ID = PRODUIT.PROD_ID
+  INNER JOIN STYLEMUSICAL ON music_id = CD.STYLEMUSICAL_MUSIC_ID
+  WHERE PROD_ID IN (
+    SELECT PRODUIT_prod_id FROM CD
+  );
+
+  v_nom PRODUIT.prod_nom%TYPE;
+  v_description PRODUIT.PROD_DESCRIPTION%TYPE;
+  v_libelle STYLEMUSICAL.music_libelle%TYPE;
+  v_artiste CD.CD_ARTISTE%TYPE;
+BEGIN
+  OPEN listeCd;
+    LOOP
+        FETCH listeCd INTO v_nom, v_description, v_libelle, v_artiste;
+        DBMS_OUTPUT.PUT_LINE('Nom : ' || v_nom ||' Description : '|| v_description ||' Genre : '|| v_libelle ||' Artiste : '|| v_artiste); 
+        EXIT WHEN listeCd%NOTFOUND; 
+    END LOOP;
+  CLOSE listeCd;
+END;
+/
