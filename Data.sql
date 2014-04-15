@@ -9,6 +9,9 @@ CALL ADDTYPEADRESSE('FACTURATION');
 CALL ADDTYPEADRESSE('LIVRAISON');
 CALL ADDTYPEADRESSE('POINT LIVRAISON');
 
+-----------------------------------------------------------------------------
+--AJOUT DE DONNEES UTILISANT LA PROC nouveauGenre--
+-----------------------------------------------------------------------------
 CALL nouveauGenre('Aventure');
 CALL nouveauGenre('Science Fiction');
 CALL nouveauGenre('Fantasy');
@@ -20,6 +23,9 @@ CALL nouveauGenre('Policier');
 CALL nouveauGenre('Informatique');
 CALL nouveauGenre('Guide');
 
+-----------------------------------------------------------------------------
+--AJOUT DE DONNEES UTILISANT LA PROC nouveauStyle--
+-----------------------------------------------------------------------------
 CALL nouveauStyle('Rock');
 CALL nouveauStyle('Country');
 CALL nouveauStyle('Rap');
@@ -29,6 +35,9 @@ CALL nouveauStyle('Blues');
 CALL nouveauStyle('Dance');
 CALL nouveauStyle('House');
 
+-----------------------------------------------------------------------------
+--AJOUT DE DONNEES UTILISANT LA PROC nouveauVendeur--
+-----------------------------------------------------------------------------
 CALL nouveauVendeur('Amazon');
 CALL nouveauVendeur('DVD-A-Tout-Prix');
 CALL nouveauVendeur('Espace Multimédia');
@@ -39,6 +48,9 @@ CALL nouveauVendeur('La foire au cd');
 CALL nouveauVendeur('Vive les livres');
 CALL nouveauVendeur('Culture.com');
 
+-----------------------------------------------------------------------------
+--AJOUT DE DONNEES UTILISANT LA PROC nouveauEditeur--
+-----------------------------------------------------------------------------
 CALL nouveauEditeur('Bourgois');
 CALL nouveauEditeur('Belfond');
 CALL nouveauEditeur('Babel noir');
@@ -48,11 +60,17 @@ CALL nouveauEditeur('HarperCollins');
 CALL nouveauEditeur('First Editions');
 CALL nouveauEditeur('Prentice Hall');
 
+-----------------------------------------------------------------------------
+--AJOUT DE DONNEES UTILISANT LA PROC nouvelEtat--
+-----------------------------------------------------------------------------
 CALL nouvelEtat('Annulé');
 CALL nouvelEtat('En cours');
 CALL nouvelEtat('Expédié');
 CALL nouvelEtat('Livré');
 
+-----------------------------------------------------------------------------
+--AJOUT DE DONNEES UTILISANT LA PROC ADDUSER--
+-----------------------------------------------------------------------------
 CALL ADDUSER('MACHUT', 'Nicolas', 'machut.nicolas@gmail.com', 'secret');
 CALL ADDUSER('SOUAN', 'Edouard', 'souan.edouard@gmail.com', 'grosLard');
 CALL ADDUSER('GOLONKA', 'Marion', 'golonka.marion@gmail.com', 'yeah');
@@ -62,10 +80,16 @@ CALL ADDUSER('RIFFARD', 'Julien', 'riffard.julien@gmail.com', 'petitCon');
 CALL ADDUSER('SAVAROCHE', 'Kim', 'savaroche.kim@gmail.com', 'chinois');
 CALL ADDUSER('LECUONA', 'Patrice', 'lecuona.patrice@gmail.com', 'planning');
 
+-----------------------------------------------------------------------------
+--AJOUT DE DONNEES UTILISANT LA PROC nouvelleTVA--
+-----------------------------------------------------------------------------
 CALL nouvelleTVA(20);
 CALL nouvelleTVA(10);
 CALL nouvelleTVA(5.5);
 
+-----------------------------------------------------------------------------
+--AJOUT DE DONNEES UTILISANT LA PROC nouveauLivre--
+-----------------------------------------------------------------------------
 CALL nouveauLivre(2, 'Clean Code', 'A Handbook of Agile Software Craftsmanship', 431, 8, 'Robert C.Martin', 9);
 CALL nouveauLivre(2, 'Le sexe pour les nuls', 'Avec les nuls, tout devient facile !', 366, 7, 'Dr Ruth K.Westheimer', 10);
 CALL nouveauLivre(2, 'Game Of Thrones T1', 'Kings and queens, knights and renegades, liars, lors and honest men. All will play the Game of Thrones', 801, 6, 'George RR Martin', 3);
@@ -75,6 +99,9 @@ CALL nouveauLivre(2, 'Millénium 1', 'Les Hommes qui n aimaient pas les femmes' 
 CALL nouveauLivre(2, 'Innocent', 'Un ami en danger. Une bagarre qui dégénère. Un accident. A vingt ans, Matt Hunter ...' , 517, 2, 'Harlan Coben', 8);
 CALL nouveauLivre(2, 'Le seigneur des anneaux', 'La communauté de l anneau' , 928, 1, 'J.R.R. Tolkien', 3);
 
+-----------------------------------------------------------------------------
+--AJOUT DE DONNEES UTILISANT LA PROC nouveauCD--
+-----------------------------------------------------------------------------
 CALL nouveauCD(2, 'Just A Little Beat', 'Super CD de beat Making', 8, 'Hoosky');
 CALL nouveauCD(2, 'Revolve And Step Up', 'Moins bien que les précédents album mais pas mal...', 3, 'Puppetmastaz');
 CALL nouveauCD(2, 'Tetra', 'Un peu trop commercial à mon gout ! ', 8, 'C2C');
@@ -82,6 +109,9 @@ CALL nouveauCD(2, '2001', 'Un des meilleurs album de rap de tous les temps !', 3
 CALL nouveauCD(2, 'L art de la joie', 'L été c est cool le ska !', 4, 'La Ruda Salska');
 CALL nouveauCD(2, 'Ladilafe', 'Pas mal ...', 4, 'Tryo');
 
+-----------------------------------------------------------------------------
+--AJOUT DE DONNEES UTILISANT LA PROC nouvellePiste--
+-----------------------------------------------------------------------------
 CALL nouvellePiste(14, 'Greenwashing', 312);
 CALL nouvellePiste(14, 'Ladilafe', 260);
 CALL nouvellePiste(14, 'Nous generation', 180);
@@ -107,6 +137,9 @@ CALL nouvellePiste(9, 'Rush Hour', 237);
 CALL nouvellePiste(9, 'Flying Market', 198);
 CALL nouvellePiste(9, 'Crushed', 230);
 
+-----------------------------------------------------------------------------
+--AJOUT DE DONNEES UTILISANT LA PROC vendeurVendProduit--
+-----------------------------------------------------------------------------
 CALL vendeurVendProduit( 7, 1, 9.50);
 CALL vendeurVendProduit( 9, 1, 10);
 CALL vendeurVendProduit( 10, 1, 12);
@@ -149,4 +182,20 @@ CALL vendeurVendProduit( 6, 9, 13.90);
 CALL vendeurVendProduit( 11, 9, 19);
 CALL vendeurVendProduit( 12, 9, 20);
 
+-----------------------------------------------------------------------------
+--AJOUT DE DONNEES UTILISANT LA PROC ADDCB--
+-----------------------------------------------------------------------------
+CALL ADDCB('1','1231231231231231','101','11/19');
+CALL ADDCB('2','9090909090909090','213','11/14');
+CALL ADDCB('3','1231231233213219','106','04/17');
+CALL ADDCB('3','1231231231235683','901','06/18');
+CALL ADDCB('4','1231230909031231','567','10/15');
+
+-----------------------------------------------------------------------------
+--AJOUT DE DONNEES UTILISANT LA PROC ADDADRESSE--
+-----------------------------------------------------------------------------
+CALL ADDADRESSE(1,'sous le pont de pierre','tente N°33','33000','BORDEAUX','FACTURATION');
+CALL ADDADRESSE(1,'sous le pont de pierre','tente N°33','33000','BORDEAUX','LIVRAISON');
+CALL ADDADRESSE(3,'4 rue imaginaire','appt 5 fictif','33000','BORDEAUX','FACTURATION');
+CALL ADDADRESSE(5,'sous le pont de pierre','tente N°33','33000','BORDEAUX','LIVRAISON');
 
