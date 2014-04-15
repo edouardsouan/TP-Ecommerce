@@ -4,7 +4,9 @@
 
 
 -----------------------------------------------------------------------------
+============
 --AJOUT DE DONNEES UTILISANT LA PROC ADDUSER--
+============
 -----------------------------------------------------------------------------
 CALL ADDUSER('MACHUT', 'Nicolas', 'machut.nicolas@gmail.com', 'secret');
 CALL ADDUSER('SOUAN', 'Edouard', 'souan.edouard@gmail.com', 'grosLard');
