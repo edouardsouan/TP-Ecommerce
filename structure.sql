@@ -1,5 +1,5 @@
 -- Généré par Oracle SQL Developer Data Modeler 4.0.1.836
---   à :        2014-04-23 11:58:37 CEST
+--   à :        2014-04-23 16:18:42 CEST
 --   site :      Oracle Database 11g
 --   type :      Oracle Database 11g
 
@@ -79,8 +79,9 @@ CREATE TABLE EtatCommande
   (
     etaCom_id                 NUMBER (2) NOT NULL ,
     Etat_etat_id              NUMBER (2) NOT NULL ,
-    etaCom_date               TIMESTAMP ,
-    Commande_Panier_panier_id NUMBER (3) NOT NULL
+    etaCom_dateDebut          TIMESTAMP ,
+    Commande_Panier_panier_id NUMBER (3) NOT NULL ,
+    etaCom_dateFin            TIMESTAMP
   ) ;
 ALTER TABLE EtatCommande ADD CONSTRAINT EtatCommande_PK PRIMARY KEY ( etaCom_id ) ;
 
