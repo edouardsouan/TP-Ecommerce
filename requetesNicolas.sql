@@ -1,4 +1,4 @@
-#Suppression des toutes les tables de l'utilisateurs
+--Suppression des toutes les tables de l'utilisateurs
 BEGIN
     FOR c IN (SELECT object_name,
                      object_type

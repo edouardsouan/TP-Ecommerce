@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="3020848887">
+    <data-source source="LOCAL" name="Oracle - TPCommerce@localhost" uuid="ba1b3d02-61de-49b6-80f2-de6fee650072">
+      <driver-ref>oracle</driver-ref>
+      <jdbc-driver>oracle.jdbc.OracleDriver</jdbc-driver>
+      <jdbc-url>jdbc:oracle:thin:@//localhost:1622/TPCommerce</jdbc-url>
+      <user-name>TPCommerce</user-name>
+      <user-password>dfcfdfdadfd9dfc3df92df9bdf98dfebdfe0dfe2</user-password>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+

@@ -1,5 +1,5 @@
 -- Généré par Oracle SQL Developer Data Modeler 4.0.1.836
---   à :        2014-04-13 18:09:51 CEST
+--   à :        2014-04-23 09:32:11 CEST
 --   site :      Oracle Database 11g
 --   type :      Oracle Database 11g
 
@@ -17,6 +17,14 @@ CREATE TABLE Adresse
     TypeAdresse_adrType_id NUMBER (2) NOT NULL
   ) ;
 ALTER TABLE Adresse ADD CONSTRAINT Adresse_PK PRIMARY KEY ( adr_id ) ;
+
+CREATE TABLE AdressesCommandes
+  (
+    adressesCommandes_id      NUMBER (3) NOT NULL ,
+    Adresse_adr_id            NUMBER (2) NOT NULL ,
+    Commande_Panier_panier_id NUMBER (3) NOT NULL
+  ) ;
+ALTER TABLE AdressesCommandes ADD CONSTRAINT AdressesCommandes_PK PRIMARY KEY ( adressesCommandes_id ) ;
 
 CREATE TABLE CB
   (
@@ -48,17 +56,10 @@ ALTER TABLE Client ADD CONSTRAINT Client_PK PRIMARY KEY ( cli_id ) ;
 
 CREATE TABLE Commande
   (
-    Livraison_livr_id NUMBER (2) NOT NULL ,
-    Panier_panier_id  NUMBER (3) NOT NULL ,
+    Panier_panier_id NUMBER (3) NOT NULL ,
     commande_date NVARCHAR2 (50)
   ) ;
 ALTER TABLE Commande ADD CONSTRAINT Commande_PK PRIMARY KEY ( Panier_panier_id ) ;
-
-CREATE TABLE Domicile
-  (
-    Livraison_livr_id NUMBER (2) NOT NULL ,
-    Client_cli_id     NUMBER (2) NOT NULL
-  ) ;
 
 CREATE TABLE Editeur
   (
@@ -98,13 +99,6 @@ CREATE TABLE LignePanier
     Vend_vend_id     NUMBER (3) NOT NULL
   ) ;
 ALTER TABLE LignePanier ADD CONSTRAINT LignePanier_PK PRIMARY KEY ( ligne_id ) ;
-
-CREATE TABLE Livraison
-  (
-    livr_id NUMBER (2) NOT NULL ,
-    livr_libelle NVARCHAR2 (50)
-  ) ;
-ALTER TABLE Livraison ADD CONSTRAINT Livraison_PK PRIMARY KEY ( livr_id ) ;
 
 CREATE TABLE Livre
   (
@@ -150,13 +144,6 @@ CREATE TABLE Piste
     pis_numero NUMBER (2)
   ) ;
 ALTER TABLE Piste ADD CONSTRAINT Piste_PK PRIMARY KEY ( pist_id ) ;
-
-CREATE TABLE PointRelais
-  (
-    Livraison_livr_id NUMBER (2) NOT NULL ,
-    point_nom NVARCHAR2 (50) ,
-    Adresse_adr_id NUMBER (2) NOT NULL
-  ) ;
 
 CREATE TABLE Produit
   (
@@ -208,25 +195,25 @@ ALTER TABLE Adresse ADD CONSTRAINT Adresse_Client_FK FOREIGN KEY ( Client_cli_id
 
 ALTER TABLE Adresse ADD CONSTRAINT Adresse_TypeAdresse_FK FOREIGN KEY ( TypeAdresse_adrType_id ) REFERENCES TypeAdresse ( adrType_id ) ;
 
+ALTER TABLE AdressesCommandes ADD CONSTRAINT AdressesCommandes_Adresse_FK FOREIGN KEY ( Adresse_adr_id ) REFERENCES Adresse ( adr_id ) ;
+
+ALTER TABLE AdressesCommandes ADD CONSTRAINT AdressesCommandes_Commande_FK FOREIGN KEY ( Commande_Panier_panier_id ) REFERENCES Commande ( Panier_panier_id ) ;
+
 ALTER TABLE CB ADD CONSTRAINT CB_Client_FK FOREIGN KEY ( Client_cli_id ) REFERENCES Client ( cli_id ) ;
 
 ALTER TABLE CD ADD CONSTRAINT CD_Produit_FK FOREIGN KEY ( Produit_prod_id ) REFERENCES Produit ( prod_id ) ;
 
 ALTER TABLE CD ADD CONSTRAINT CD_StyleMusical_FK FOREIGN KEY ( StyleMusical_music_id ) REFERENCES StyleMusical ( music_id ) ;
 
-ALTER TABLE Commande ADD CONSTRAINT Commande_Livraison_FK FOREIGN KEY ( Livraison_livr_id ) REFERENCES Livraison ( livr_id ) ;
-
 ALTER TABLE Commande ADD CONSTRAINT Commande_Panier_FK FOREIGN KEY ( Panier_panier_id ) REFERENCES Panier ( panier_id ) ;
-
-ALTER TABLE Domicile ADD CONSTRAINT Domicile_Client_FK FOREIGN KEY ( Client_cli_id ) REFERENCES Client ( cli_id ) ;
-
-ALTER TABLE Domicile ADD CONSTRAINT Domicile_Livraison_FK FOREIGN KEY ( Livraison_livr_id ) REFERENCES Livraison ( livr_id ) ;
 
 ALTER TABLE EtatCommande ADD CONSTRAINT EtatCommande_Commande_FK FOREIGN KEY ( Commande_Panier_panier_id ) REFERENCES Commande ( Panier_panier_id ) ;
 
 ALTER TABLE EtatCommande ADD CONSTRAINT EtatCommande_Etat_FK FOREIGN KEY ( Etat_etat_id ) REFERENCES Etat ( etat_id ) ;
 
 ALTER TABLE LignePanier ADD CONSTRAINT LignePanier_Panier_FK FOREIGN KEY ( Panier_panier_id ) REFERENCES Panier ( panier_id ) ;
+
+-- Error - Foreign Key LignePanier_Produit_FK has no columns
 
 ALTER TABLE LignePanier ADD CONSTRAINT LignePanier_Vend_FK FOREIGN KEY ( Vend_vend_id ) REFERENCES Vend ( vend_id ) ;
 
@@ -248,10 +235,6 @@ ALTER TABLE Panier ADD CONSTRAINT Panier_Client_FK FOREIGN KEY ( Client_cli_id )
 
 ALTER TABLE Piste ADD CONSTRAINT Piste_CD_FK FOREIGN KEY ( CD_Produit_prod_id ) REFERENCES CD ( Produit_prod_id ) ;
 
-ALTER TABLE PointRelais ADD CONSTRAINT PointRelais_Adresse_FK FOREIGN KEY ( Adresse_adr_id ) REFERENCES Adresse ( adr_id ) ;
-
-ALTER TABLE PointRelais ADD CONSTRAINT PointRelais_Livraison_FK FOREIGN KEY ( Livraison_livr_id ) REFERENCES Livraison ( livr_id ) ;
-
 ALTER TABLE Produit ADD CONSTRAINT Produit_TVA_FK FOREIGN KEY ( TVA_tva_code ) REFERENCES TVA ( tva_code ) ;
 
 ALTER TABLE Vend ADD CONSTRAINT Vend_Produit_FK FOREIGN KEY ( Produit_prod_id ) REFERENCES Produit ( prod_id ) ;
@@ -261,9 +244,9 @@ ALTER TABLE Vend ADD CONSTRAINT Vend_Vendeur_FK FOREIGN KEY ( Vendeur_vend_id ) 
 
 -- Rapport récapitulatif d'Oracle SQL Developer Data Modeler : 
 -- 
--- CREATE TABLE                            24
+-- CREATE TABLE                            22
 -- CREATE INDEX                             0
--- ALTER TABLE                             49
+-- ALTER TABLE                             46
 -- CREATE VIEW                              0
 -- CREATE PACKAGE                           0
 -- CREATE PACKAGE BODY                      0
@@ -293,5 +276,5 @@ ALTER TABLE Vend ADD CONSTRAINT Vend_Vendeur_FK FOREIGN KEY ( Vendeur_vend_id ) 
 -- 
 -- REDACTION POLICY                         0
 -- 
--- ERRORS                                   0
+-- ERRORS                                   1
 -- WARNINGS                                 0
