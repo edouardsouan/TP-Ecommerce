@@ -1,5 +1,5 @@
 -- Généré par Oracle SQL Developer Data Modeler 4.0.1.836
---   à :        2014-04-23 09:32:11 CEST
+--   à :        2014-04-23 11:58:37 CEST
 --   site :      Oracle Database 11g
 --   type :      Oracle Database 11g
 
@@ -213,8 +213,6 @@ ALTER TABLE EtatCommande ADD CONSTRAINT EtatCommande_Etat_FK FOREIGN KEY ( Etat_
 
 ALTER TABLE LignePanier ADD CONSTRAINT LignePanier_Panier_FK FOREIGN KEY ( Panier_panier_id ) REFERENCES Panier ( panier_id ) ;
 
--- Error - Foreign Key LignePanier_Produit_FK has no columns
-
 ALTER TABLE LignePanier ADD CONSTRAINT LignePanier_Vend_FK FOREIGN KEY ( Vend_vend_id ) REFERENCES Vend ( vend_id ) ;
 
 ALTER TABLE Livre ADD CONSTRAINT Livre_Editeur_FK FOREIGN KEY ( Editeur_edit_id ) REFERENCES Editeur ( edit_id ) ;
@@ -276,5 +274,5 @@ ALTER TABLE Vend ADD CONSTRAINT Vend_Vendeur_FK FOREIGN KEY ( Vendeur_vend_id ) 
 -- 
 -- REDACTION POLICY                         0
 -- 
--- ERRORS                                   1
+-- ERRORS                                   0
 -- WARNINGS                                 0

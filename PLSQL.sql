@@ -304,7 +304,7 @@ IS
   v_auteur LIVRE.liv_auteur%TYPE;
   v_genre GENRE.genre_libelle%TYPE;
   v_tva TVA.tva_taux%TYPE;
-  BEGIN
+BEGIN
     OPEN listeLivre;
     LOOP
       FETCH listeLivre INTO v_nom, v_description, v_nbPages, v_editeur, v_auteur, v_genre, v_tva;
@@ -314,4 +314,31 @@ IS
   CLOSE listeLivre;
 END;
 /
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+--Affiche des commandes en cours // A finir
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+CREATE OR REPLACE PROCEDURE commandeEnCours(p_idClient IN CLIENT.cli_id%TYPE)
+IS
+  CURSOR commandes IS
+    SELECT PANIER_panier_id
+    FROM COMMANDE
+      INNER JOIN PANIER ON PANIER.CLIENT_CLI_ID = p_idClient
+    WHERE PANIER_PANIER_ID IN(
+      SELECT etaCom_id
+      FROM ETATCOMMANDE
+        INNER JOIN ETAT ON ETAT.etat_id = 2 AND ETATCOMMANDE.ETACOM_DATE >= CURRENT_DATE);
+
+  v_id COMMANDE.PANIER_panier_id%TYPE;
+BEGIN
+  OPEN commandes;
+  LOOP
+    FETCH commandes INTO v_id;
+    DBMS_OUTPUT.PUT_LINE('Nicolas');
+    EXIT WHEN commandes%NOTFOUND;
+  END LOOP ;
+  CLOSE commandes;
+END;
+
+
 
