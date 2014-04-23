@@ -285,9 +285,33 @@ BEGIN
 END;
 /
 
-CREATE OR REPLACE PROCEDURE catalogueLivre
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+--Affichage de tous les livres
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+create or replace PROCEDURE catalogueLivre
 IS
-  CURSOR
-BEGIN
+  CURSOR listeLivre IS SELECT PRODUIT.PROD_NOM, PRODUIT.PROD_DESCRIPTION, LIVRE.LIV_NBPAGES, EDITEUR.EDIT_NOM, LIVRE.LIV_AUTEUR, GENRE.GENRE_LIBELLE, TVA.TVA_TAUX
+                       FROM PRODUIT
+                         INNER JOIN LIVRE ON LIVRE.PRODUIT_PROD_ID=PRODUIT.PROD_ID
+                         INNER JOIN EDITEUR ON EDITEUR.EDIT_ID=LIVRE.EDITEUR_EDIT_ID
+                         INNER JOIN GENRE ON GENRE.GENRE_ID=LIVRE.GENRE_GENRE_ID
+                         INNER JOIN TVA ON TVA.TVA_CODE=PRODUIT.TVA_TVA_CODE
+                       WHERE PROD_ID IN (SELECT LIVRE.PRODUIT_PROD_ID FROM LIVRE);
+  v_nom PRODUIT.prod_nom%TYPE;
+  v_description PRODUIT.prod_description%TYPE;
+  v_nbPages LIVRE.liv_nbPages%TYPE;
+  v_editeur EDITEUR.edit_nom%TYPE;
+  v_auteur LIVRE.liv_auteur%TYPE;
+  v_genre GENRE.genre_libelle%TYPE;
+  v_tva TVA.tva_taux%TYPE;
+  BEGIN
+    OPEN listeLivre;
+    LOOP
+      FETCH listeLivre INTO v_nom, v_description, v_nbPages, v_editeur, v_auteur, v_genre, v_tva;
+        DBMS_OUTPUT.PUT_LINE('Nom : ' || v_nom || ' Description : ' || v_description || ' Nombre de pages : ' || v_nbPages || ' Editeur : ' || v_editeur || ' Auteur : ' || v_auteur || ' Genre : ' || v_genre || ' TVA : ' || v_tva);
+        EXIT WHEN listeLivre%NOTFOUND;
+      END LOOP;
+  CLOSE listeLivre;
 END;
 /
+
