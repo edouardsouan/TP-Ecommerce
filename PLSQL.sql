@@ -217,12 +217,12 @@ END;
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 --Ajout d'une TVA
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
-CREATE OR REPLACE PROCEDURE nouvelleTVA(pTaux IN TVA.tva_taux%TYPE)
-IS 
-BEGIN
-  INSERT INTO TVA(tva_code, tva_taux)
-  VALUES(seq_tva.nextval, pTaux);
-END;
+CREATE OR REPLACE PROCEDURE nouvelleTVA(pTaux IN TVA.tva_taux%TYPE, pDateDebut IN NVARCHAR2, pDateFin IN NVARCHAR2 )
+IS
+  BEGIN
+    INSERT INTO TVA(tva_code, tva_taux, tva_dateDebut, tva_dateFin)
+    VALUES(seq_tva.nextval, pTaux, TO_TIMESTAMP(pDateDebut, 'DD/MM/YYYY'), TO_TIMESTAMP(pDateFin, 'DD/MM/YYYY'));
+  END;
 /
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 --Ajout d'un éditeur
@@ -314,31 +314,3 @@ BEGIN
   CLOSE listeLivre;
 END;
 /
-
-------------------------------------------------------------------------------------------------------------------------------------------------------------
---Affiche des commandes en cours // A finir
-------------------------------------------------------------------------------------------------------------------------------------------------------------
-CREATE OR REPLACE PROCEDURE commandeEnCours(p_idClient IN CLIENT.cli_id%TYPE)
-IS
-  CURSOR commandes IS
-    SELECT PANIER_panier_id
-    FROM COMMANDE
-      INNER JOIN PANIER ON PANIER.CLIENT_CLI_ID = p_idClient
-    WHERE PANIER_PANIER_ID IN(
-      SELECT etaCom_id
-      FROM ETATCOMMANDE
-        INNER JOIN ETAT ON ETAT.etat_id = 2 AND ETATCOMMANDE.ETACOM_DATE >= CURRENT_DATE);
-
-  v_id COMMANDE.PANIER_panier_id%TYPE;
-BEGIN
-  OPEN commandes;
-  LOOP
-    FETCH commandes INTO v_id;
-    DBMS_OUTPUT.PUT_LINE('Nicolas');
-    EXIT WHEN commandes%NOTFOUND;
-  END LOOP ;
-  CLOSE commandes;
-END;
-
-
-

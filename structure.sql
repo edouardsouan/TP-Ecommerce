@@ -1,5 +1,5 @@
 -- Généré par Oracle SQL Developer Data Modeler 4.0.1.836
---   à :        2014-04-23 16:18:42 CEST
+--   à :        2014-04-24 11:45:48 CEST
 --   site :      Oracle Database 11g
 --   type :      Oracle Database 11g
 
@@ -20,9 +20,9 @@ ALTER TABLE Adresse ADD CONSTRAINT Adresse_PK PRIMARY KEY ( adr_id ) ;
 
 CREATE TABLE AdressesCommandes
   (
-    adressesCommandes_id      NUMBER (3) NOT NULL ,
-    Adresse_adr_id            NUMBER (2) NOT NULL ,
-    Commande_Panier_panier_id NUMBER (3) NOT NULL
+    adressesCommandes_id     NUMBER (3) NOT NULL ,
+    Adresse_adr_id           NUMBER (2) NOT NULL ,
+    Commande_commande_numero NUMBER (3) NOT NULL
   ) ;
 ALTER TABLE AdressesCommandes ADD CONSTRAINT AdressesCommandes_PK PRIMARY KEY ( adressesCommandes_id ) ;
 
@@ -56,10 +56,14 @@ ALTER TABLE Client ADD CONSTRAINT Client_PK PRIMARY KEY ( cli_id ) ;
 
 CREATE TABLE Commande
   (
-    Panier_panier_id NUMBER (3) NOT NULL ,
-    commande_date NVARCHAR2 (50)
+    commande_date NVARCHAR2 (50) ,
+    commande_id       NUMBER (3) NOT NULL ,
+    Client_cli_id     NUMBER (2) NOT NULL ,
+    Vend_vend_id      NUMBER (3) NOT NULL ,
+    commande_numero   NUMBER (3) NOT NULL ,
+    commande_quantite NUMBER (2)
   ) ;
-ALTER TABLE Commande ADD CONSTRAINT Commande_PK PRIMARY KEY ( Panier_panier_id ) ;
+ALTER TABLE Commande ADD CONSTRAINT Commande_PK PRIMARY KEY ( commande_id ) ;
 
 CREATE TABLE Editeur
   (
@@ -77,11 +81,11 @@ ALTER TABLE Etat ADD CONSTRAINT Etat_PK PRIMARY KEY ( etat_id ) ;
 
 CREATE TABLE EtatCommande
   (
-    etaCom_id                 NUMBER (2) NOT NULL ,
-    Etat_etat_id              NUMBER (2) NOT NULL ,
-    etaCom_dateDebut          TIMESTAMP ,
-    Commande_Panier_panier_id NUMBER (3) NOT NULL ,
-    etaCom_dateFin            TIMESTAMP
+    etaCom_id                NUMBER (2) NOT NULL ,
+    Etat_etat_id             NUMBER (2) NOT NULL ,
+    etaCom_dateDebut         TIMESTAMP ,
+    etaCom_dateFin           TIMESTAMP ,
+    Commande_commande_numero NUMBER (3) NOT NULL
   ) ;
 ALTER TABLE EtatCommande ADD CONSTRAINT EtatCommande_PK PRIMARY KEY ( etaCom_id ) ;
 
@@ -91,15 +95,6 @@ CREATE TABLE Genre
     genre_libelle NVARCHAR2 (50)
   ) ;
 ALTER TABLE Genre ADD CONSTRAINT Genre_PK PRIMARY KEY ( genre_id ) ;
-
-CREATE TABLE LignePanier
-  (
-    ligne_id         NUMBER (2) NOT NULL ,
-    Panier_panier_id NUMBER (3) NOT NULL ,
-    quantite         NUMBER (2) ,
-    Vend_vend_id     NUMBER (3) NOT NULL
-  ) ;
-ALTER TABLE LignePanier ADD CONSTRAINT LignePanier_PK PRIMARY KEY ( ligne_id ) ;
 
 CREATE TABLE Livre
   (
@@ -129,13 +124,6 @@ CREATE TABLE NoteVendeur
   ) ;
 ALTER TABLE NoteVendeur ADD CONSTRAINT NoteVendeur_PK PRIMARY KEY ( note_id ) ;
 
-CREATE TABLE Panier
-  (
-    panier_id     NUMBER (3) NOT NULL ,
-    Client_cli_id NUMBER (2) NOT NULL
-  ) ;
-ALTER TABLE Panier ADD CONSTRAINT Panier_PK PRIMARY KEY ( panier_id ) ;
-
 CREATE TABLE Piste
   (
     pist_id            NUMBER NOT NULL ,
@@ -148,10 +136,10 @@ ALTER TABLE Piste ADD CONSTRAINT Piste_PK PRIMARY KEY ( pist_id ) ;
 
 CREATE TABLE Produit
   (
-    prod_id      NUMBER (2) NOT NULL ,
-    TVA_tva_code NUMBER (2) NOT NULL ,
+    prod_id NUMBER (2) NOT NULL ,
     prod_nom NVARCHAR2 (50) ,
-    prod_description CLOB
+    prod_description CLOB ,
+    TVA_tva_code NUMBER (2) NOT NULL
   ) ;
 ALTER TABLE Produit ADD CONSTRAINT Produit_PK PRIMARY KEY ( prod_id ) ;
 
@@ -165,7 +153,9 @@ ALTER TABLE StyleMusical ADD CONSTRAINT StyleMusical_PK PRIMARY KEY ( music_id )
 CREATE TABLE TVA
   (
     tva_code NUMBER (2) NOT NULL ,
-    tva_taux NUMBER (4,2) NOT NULL
+    tva_taux NUMBER (4,2) NOT NULL ,
+    tva_dateDebut NVARCHAR2 (50) ,
+    tva_dateFin NVARCHAR2 (50)
   ) ;
 ALTER TABLE TVA ADD CONSTRAINT TVA_PK PRIMARY KEY ( tva_code ) ;
 
@@ -181,7 +171,8 @@ CREATE TABLE Vend
     vend_id         NUMBER (3) NOT NULL ,
     Produit_prod_id NUMBER (2) NOT NULL ,
     Vendeur_vend_id NUMBER (2) NOT NULL ,
-    vend_prix       NUMBER (3) NOT NULL
+    vend_prix       NUMBER (3) NOT NULL ,
+    vend_date NVARCHAR2 (50)
   ) ;
 ALTER TABLE Vend ADD CONSTRAINT TABLE_16_PK PRIMARY KEY ( vend_id ) ;
 
@@ -198,7 +189,7 @@ ALTER TABLE Adresse ADD CONSTRAINT Adresse_TypeAdresse_FK FOREIGN KEY ( TypeAdre
 
 ALTER TABLE AdressesCommandes ADD CONSTRAINT AdressesCommandes_Adresse_FK FOREIGN KEY ( Adresse_adr_id ) REFERENCES Adresse ( adr_id ) ;
 
-ALTER TABLE AdressesCommandes ADD CONSTRAINT AdressesCommandes_Commande_FK FOREIGN KEY ( Commande_Panier_panier_id ) REFERENCES Commande ( Panier_panier_id ) ;
+ALTER TABLE AdressesCommandes ADD CONSTRAINT AdressesCommandes_Commande_FK FOREIGN KEY ( Commande_commande_numero ) REFERENCES Commande ( commande_id ) ;
 
 ALTER TABLE CB ADD CONSTRAINT CB_Client_FK FOREIGN KEY ( Client_cli_id ) REFERENCES Client ( cli_id ) ;
 
@@ -206,15 +197,13 @@ ALTER TABLE CD ADD CONSTRAINT CD_Produit_FK FOREIGN KEY ( Produit_prod_id ) REFE
 
 ALTER TABLE CD ADD CONSTRAINT CD_StyleMusical_FK FOREIGN KEY ( StyleMusical_music_id ) REFERENCES StyleMusical ( music_id ) ;
 
-ALTER TABLE Commande ADD CONSTRAINT Commande_Panier_FK FOREIGN KEY ( Panier_panier_id ) REFERENCES Panier ( panier_id ) ;
+ALTER TABLE Commande ADD CONSTRAINT Commande_Client_FK FOREIGN KEY ( Client_cli_id ) REFERENCES Client ( cli_id ) ;
 
-ALTER TABLE EtatCommande ADD CONSTRAINT EtatCommande_Commande_FK FOREIGN KEY ( Commande_Panier_panier_id ) REFERENCES Commande ( Panier_panier_id ) ;
+ALTER TABLE Commande ADD CONSTRAINT Commande_Vend_FK FOREIGN KEY ( Vend_vend_id ) REFERENCES Vend ( vend_id ) ;
+
+ALTER TABLE EtatCommande ADD CONSTRAINT EtatCommande_Commande_FK FOREIGN KEY ( Commande_commande_numero ) REFERENCES Commande ( commande_id ) ;
 
 ALTER TABLE EtatCommande ADD CONSTRAINT EtatCommande_Etat_FK FOREIGN KEY ( Etat_etat_id ) REFERENCES Etat ( etat_id ) ;
-
-ALTER TABLE LignePanier ADD CONSTRAINT LignePanier_Panier_FK FOREIGN KEY ( Panier_panier_id ) REFERENCES Panier ( panier_id ) ;
-
-ALTER TABLE LignePanier ADD CONSTRAINT LignePanier_Vend_FK FOREIGN KEY ( Vend_vend_id ) REFERENCES Vend ( vend_id ) ;
 
 ALTER TABLE Livre ADD CONSTRAINT Livre_Editeur_FK FOREIGN KEY ( Editeur_edit_id ) REFERENCES Editeur ( edit_id ) ;
 
@@ -230,8 +219,6 @@ ALTER TABLE NoteVendeur ADD CONSTRAINT NoteVendeur_Client_FK FOREIGN KEY ( Clien
 
 ALTER TABLE NoteVendeur ADD CONSTRAINT NoteVendeur_Vendeur_FK FOREIGN KEY ( Vendeur_vend_id ) REFERENCES Vendeur ( vend_id ) ;
 
-ALTER TABLE Panier ADD CONSTRAINT Panier_Client_FK FOREIGN KEY ( Client_cli_id ) REFERENCES Client ( cli_id ) ;
-
 ALTER TABLE Piste ADD CONSTRAINT Piste_CD_FK FOREIGN KEY ( CD_Produit_prod_id ) REFERENCES CD ( Produit_prod_id ) ;
 
 ALTER TABLE Produit ADD CONSTRAINT Produit_TVA_FK FOREIGN KEY ( TVA_tva_code ) REFERENCES TVA ( tva_code ) ;
@@ -243,9 +230,9 @@ ALTER TABLE Vend ADD CONSTRAINT Vend_Vendeur_FK FOREIGN KEY ( Vendeur_vend_id ) 
 
 -- Rapport récapitulatif d'Oracle SQL Developer Data Modeler : 
 -- 
--- CREATE TABLE                            22
+-- CREATE TABLE                            20
 -- CREATE INDEX                             0
--- ALTER TABLE                             46
+-- ALTER TABLE                             42
 -- CREATE VIEW                              0
 -- CREATE PACKAGE                           0
 -- CREATE PACKAGE BODY                      0

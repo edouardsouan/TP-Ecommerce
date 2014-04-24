@@ -63,6 +63,7 @@ CALL nouveauEditeur('Prentice Hall');
 -----------------------------------------------------------------------------
 --AJOUT DE DONNEES UTILISANT LA PROC nouvelEtat--
 -----------------------------------------------------------------------------
+CALL nouvelEtat('Panier');
 CALL nouvelEtat('Annulé');
 CALL nouvelEtat('En cours');
 CALL nouvelEtat('Expédié');
@@ -83,9 +84,9 @@ CALL ADDUSER('LECUONA', 'Patrice', 'lecuona.patrice@gmail.com', 'planning');
 -----------------------------------------------------------------------------
 --AJOUT DE DONNEES UTILISANT LA PROC nouvelleTVA--
 -----------------------------------------------------------------------------
-CALL nouvelleTVA(20);
-CALL nouvelleTVA(10);
-CALL nouvelleTVA(5.5);
+CALL nouvelleTVA(20, '23/04/1992', '23/04/2015');
+CALL nouvelleTVA(10, '23/04/1992', '23/04/2015');
+CALL nouvelleTVA(5.5, '23/04/1992', '23/04/2015');
 
 -----------------------------------------------------------------------------
 --AJOUT DE DONNEES UTILISANT LA PROC nouveauLivre--
