@@ -65,7 +65,7 @@ CALL nouveauEditeur('Prentice Hall');
 -----------------------------------------------------------------------------
 CALL nouvelEtat('Panier');
 CALL nouvelEtat('Annulé');
-CALL nouvelEtat('En cours');
+CALL nouvelEtat('En cours de préparation');
 CALL nouvelEtat('Expédié');
 CALL nouvelEtat('Livré');
 
