@@ -200,3 +200,7 @@ CALL ADDADRESSE(1,'sous le pont de pierre','tente N°33','33000','BORDEAUX','LIV
 CALL ADDADRESSE(3,'4 rue imaginaire','appt 5 fictif','33000','BORDEAUX','FACTURATION');
 CALL ADDADRESSE(5,'sous le pont de pierre','tente N°33','33000','BORDEAUX','LIVRAISON');
 
+-----------------------------------------------------------------------------
+--AJOUT DE DONNEES UTILISANT LA PROC ADDADRESSE--
+-----------------------------------------------------------------------------
+

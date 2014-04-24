@@ -315,15 +315,60 @@ BEGIN
 END;
 /
 
-
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+--Affichage de toutes les commandes en cours d'un client
+------------------------------------------------------------------------------------------------------------------------------------------------------------
 CREATE OR REPLACE PROCEDURE commandesEnCours(pidClient IN CLIENT.cli_id%TYPE)
 IS
-  CURSOR commandesEnCours IS SELECT * FROM COMMANDE
-  WHERE COMMANDE_NUMERO IN (
+  CURSOR commandesEnCours IS
+    SELECT COMMANDE.COMMANDE_NUMERO, TO_DATE(COMMANDE.COMMANDE_DATE, 'DD/MM/YYYY'), ETAT.ETAT_LIBELLE, SUM(VEND.VEND_PRIX)
+    FROM COMMANDE
+    INNER JOIN ETATCOMMANDE ON ETATCOMMANDE.COMMANDE_COMMANDE_NUMERO = COMMANDE.COMMANDE_NUMERO
+    INNER JOIN ETAT ON ETAT.ETAT_ID = ETATCOMMANDE.ETAT_ETAT_ID
+    INNER JOIN VEND ON VEND.VENDEUR_VEND_ID=COMMANDE.VEND_VEND_ID
+    WHERE COMMANDE_NUMERO IN (
     SELECT COMMANDE_COMMANDE_NUMERO
     FROM ETATCOMMANDE
     WHERE ETAT_ETAT_ID = 3 OR ETAT_ETAT_ID = 4
-  ) AND COMMANDE.CLIENT_CLI_ID = 2;
+    ) AND COMMANDE.CLIENT_CLI_ID = pidClient
+    GROUP BY COMMANDE.COMMANDE_NUMERO, COMMANDE.COMMANDE_DATE, ETAT.ETAT_LIBELLE, VEND.VEND_PRIX
+    ORDER BY COMMANDE.COMMANDE_DATE;
 
+  v_numero COMMANDE.COMMANDE_ID%TYPE;
+  v_date DATE;
+  v_etat ETAT.ETAT_LIBELLE%TYPE;
+  v_total VEND.VEND_PRIX%TYPE;
 BEGIN
+  OPEN commandesEnCours;
+    LOOP
+      FETCH commandesEnCours INTO v_numero, v_date, v_etat, v_total;
+      DBMS_OUTPUT.PUT_LINE(v_numero || v_date || v_etat || v_total);
+      EXIT WHEN commandesEnCours%NOTFOUND;
+      END LOOP;
+  CLOSE commandesEnCours;
+END;
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+--Ajouter au panier
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+CREATE OR REPLACE PROCEDURE ajouterAuPanier(pIdClient IN CLIENT.CLI_ID%TYPE, pIdProduit IN PRODUIT.prod_id%TYPE, pQuantite IN NUMBER)
+IS
+  v_dernierNumero NUMBER;
+BEGIN
+  SELECT commande_numero INTO v_dernierNumero
+  FROM commande
+  INNER JOIN ETATCOMMANDE ON ETATCOMMANDE.COMMANDE_COMMANDE_NUMERO=commande.COMMANDE_NUMERO
+  WHERE CLIENT_CLI_ID = 2 AND ETATCOMMANDE.ETAT_ETAT_ID=1;
+
+  IF v_dernierNumero IS NULL THEN
+    SELECT MAX(commande_numero) INTO v_dernierNumero
+    FROM commande;
+  END IF;
+
+  INSERT INTO COMMANDE(commande_date, commande_id, Client_cli_id, Vend_vend_id, commande_numero, commande_quantite)
+  VALUES(CURRENT_DATE, seq_commande.nextval, pIdClient, pIdProduit, v_dernierNumero, pQuantite);
+
+  INSERT INTO ETATCOMMANDE(etaCom_id, Etat_etat_id, etaCom_dateDebut, Commande_commande_numero)
+  VALUES(seq_etatCommande, 1, CURRENT_DATE, v_dernierNumero);
 END;
