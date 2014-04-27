@@ -359,11 +359,12 @@ BEGIN
   SELECT commande_numero INTO v_dernierNumero
   FROM commande
   INNER JOIN ETATCOMMANDE ON ETATCOMMANDE.COMMANDE_COMMANDE_NUMERO=commande.COMMANDE_NUMERO
-  WHERE CLIENT_CLI_ID = 2 AND ETATCOMMANDE.ETAT_ETAT_ID=1;
+  WHERE CLIENT_CLI_ID = pIdClient AND ETATCOMMANDE.ETAT_ETAT_ID=1;
 
   IF v_dernierNumero IS NULL THEN
     SELECT MAX(commande_numero) INTO v_dernierNumero
-    FROM commande;
+    FROM commande
+    WHERE COMMANDE.CLIENT_CLI_ID = pidclient;
   END IF;
 
   INSERT INTO COMMANDE(commande_date, commande_id, Client_cli_id, Vend_vend_id, commande_numero, commande_quantite)
@@ -371,4 +372,21 @@ BEGIN
 
   INSERT INTO ETATCOMMANDE(etaCom_id, Etat_etat_id, etaCom_dateDebut, Commande_commande_numero)
   VALUES(seq_etatCommande, 1, CURRENT_DATE, v_dernierNumero);
+END;
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+--On valide le panier et on le transforme en commande
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+CREATE OR REPLACE PROCEDURE validerPanier(pNumeroCommande IN COMMANDE.commande_numero%TYPE, pCB IN CB.CB_ID%TYPE, pIdAdresse IN ADRESSE.ADR_ID%TYPE)
+IS
+BEGIN
+  UPDATE COMMANDE
+  SET CB_CB_ID = pCB
+  WHERE COMMANDE_NUMERO = pNumeroCommande;
+
+  INSERT INTO ADRESSESCOMMANDES(adressesCommandes_id, Adresse_adr_id, Commande_commande_numero)
+  VALUES(seq_adressesCommandes.nextval, pIdAdresse, pNumeroCommande);
+
+
 END;

@@ -1,5 +1,5 @@
 -- Généré par Oracle SQL Developer Data Modeler 4.0.1.836
---   à :        2014-04-24 14:40:39 CEST
+--   à :        2014-04-27 14:29:48 CEST
 --   site :      Oracle Database 11g
 --   type :      Oracle Database 11g
 
@@ -61,7 +61,8 @@ CREATE TABLE Commande
     Client_cli_id     NUMBER (2) NOT NULL ,
     Vend_vend_id      NUMBER (3) NOT NULL ,
     commande_numero   NUMBER (3) NOT NULL ,
-    commande_quantite NUMBER (2)
+    commande_quantite NUMBER (2) ,
+    CB_cb_id          NUMBER (2) NOT NULL
   ) ;
 ALTER TABLE Commande ADD CONSTRAINT Commande_PK PRIMARY KEY ( commande_id ) ;
 
@@ -197,6 +198,8 @@ ALTER TABLE CD ADD CONSTRAINT CD_Produit_FK FOREIGN KEY ( Produit_prod_id ) REFE
 
 ALTER TABLE CD ADD CONSTRAINT CD_StyleMusical_FK FOREIGN KEY ( StyleMusical_music_id ) REFERENCES StyleMusical ( music_id ) ;
 
+ALTER TABLE Commande ADD CONSTRAINT Commande_CB_FK FOREIGN KEY ( CB_cb_id ) REFERENCES CB ( cb_id ) ;
+
 ALTER TABLE Commande ADD CONSTRAINT Commande_Client_FK FOREIGN KEY ( Client_cli_id ) REFERENCES Client ( cli_id ) ;
 
 ALTER TABLE Commande ADD CONSTRAINT Commande_Vend_FK FOREIGN KEY ( Vend_vend_id ) REFERENCES Vend ( vend_id ) ;
@@ -232,7 +235,7 @@ ALTER TABLE Vend ADD CONSTRAINT Vend_Vendeur_FK FOREIGN KEY ( Vendeur_vend_id ) 
 -- 
 -- CREATE TABLE                            20
 -- CREATE INDEX                             0
--- ALTER TABLE                             42
+-- ALTER TABLE                             43
 -- CREATE VIEW                              0
 -- CREATE PACKAGE                           0
 -- CREATE PACKAGE BODY                      0
