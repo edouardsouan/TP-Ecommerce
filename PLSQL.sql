@@ -8,14 +8,48 @@ set define off;
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 --Ajout d'un client
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
-  CREATE OR REPLACE PROCEDURE ADDUSER (p_CliNom CLIENT.CLI_NOM%TYPE,p_CliPrenom CLIENT.CLI_PRENOM%TYPE,p_Cli_MAIL CLIENT.CLI_MAIL%TYPE,p_CliPwd CLIENT.CLI_MOTDEPASSE%TYPE ) AS
+CREATE OR REPLACE PROCEDURE ADDUSER (p_CliNom CLIENT.CLI_NOM%TYPE,p_CliPrenom CLIENT.CLI_PRENOM%TYPE,p_Cli_MAIL CLIENT.CLI_MAIL%TYPE,p_CliPwd CLIENT.CLI_MOTDEPASSE%TYPE ) AS
 BEGIN
 INSERT INTO CLIENT(CLI_ID,CLI_NOM,CLI_PRENOM,CLI_MAIL,CLI_MOTDEPASSE)
 VALUES(SEQ_CLIENT.NEXTVAL,p_CliNom,p_CliPrenom,p_Cli_MAIL,p_CliPwd);
 END;
 /
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+--Modification des données d'un client
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+CREATE OR REPLACE PROCEDURE UpdateUserInfo(p_idCli CLIENT.CLI_ID%TYPE ,p_CliNom CLIENT.CLI_NOM%TYPE,p_CliPrenom CLIENT.CLI_PRENOM%TYPE,p_Cli_MAIL CLIENT.CLI_MAIL%TYPE,p_CliPwd CLIENT.CLI_MOTDEPASSE%TYPE ) AS
+BEGIN
+  UPDATE CLIENT SET CLI_NOM = p_CliNom, CLI_PRENOM = p_CliPrenom , CLI_MAIL = p_Cli_MAIL, CLI_MOTDEPASSE = p_CliPwd WHERE CLI_ID = p_idCli;
+END;
+/
 
+create or replace TRIGGER tUpdateCliInfo
+BEFORE UPDATE
+ON CLIENT
+FOR EACH ROW
 
+  BEGIN
+--Garde l'ancien nom si pas renseigné
+    IF :NEW.CLI_NOM = '' OR :NEW.CLI_NOM is null THEN
+      :NEW.CLI_NOM := :OLD.CLI_NOM;
+    END IF;
+
+--Garde l'ancien prénom si pas renseigné
+    IF :NEW.CLI_PRENOM = '' OR :NEW.CLI_PRENOM is null THEN
+      :NEW.CLI_PRENOM := :OLD.CLI_PRENOM;
+    END IF;
+
+--Garde l'ancien mail si pas renseigné
+    IF :NEW.CLI_MAIL = '' OR :NEW.CLI_MAIL is null THEN
+      :NEW.CLI_MAIL := :OLD.CLI_MAIL;
+    END IF;
+
+--Garde l'ancien pwd si pas renseigné
+    IF :NEW.CLI_MOTDEPASSE = '' THEN
+      :NEW.CLI_MOTDEPASSE := :OLD.CLI_MOTDEPASSE;
+    END IF;
+  END;
+  /
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 --Ajout d'une CB à un client
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
