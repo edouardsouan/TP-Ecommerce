@@ -1,8 +1,8 @@
 TP-Ecommerce
 ============
 
-TP-Oracle (DeadLine 23/04) 
-
+TP-Oracle (DeadLine 07/05) 
+Groupe : Machut Nicolas et Souan Edouard
 ============
 
-edouard@Nicolas: Faudra qu'on se capte pour savoir comment je dois faire au niveau de l'héritage de LIVRAISON...
+
