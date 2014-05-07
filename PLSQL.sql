@@ -268,8 +268,19 @@ BEGIN
   VALUES(seq_editeur.nextval, pNom);
 END;
 /
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
---Ajout d'un été de commande
+--Notation d'un produit par un client
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create or replace PROCEDURE RateProduct(p_CliID CLIENT.CLI_ID%TYPE, p_ProdID PRODUIT.PROD_ID%TYPE,p_noteProd NOTEPRODUIT.NOTE_VALEUR%TYPE)
+AS
+  BEGIN
+    INSERT INTO NOTEPRODUIT(PRODUIT_PROD_ID,CLIENT_CLI_ID,NOTE_ID,NOTE_VALEUR)
+    VALUES(p_ProdID,p_CliID,SEQ_NOTEPRODUIT.NEXTVAL,p_noteProd);
+  END;
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+--Ajout d'un état de commande
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 CREATE OR REPLACE PROCEDURE nouvelEtat(pLibelle IN ETAT.etat_libelle%TYPE)
 IS 
