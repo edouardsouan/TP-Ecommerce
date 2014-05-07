@@ -1,0 +1,57 @@
+
+
+                                Descriptif du Projet Ecommerce (Front Office)
+________________________________________________________________________________________________________________________
+
+-------- I- Analyse
+---------------------------
+
+L'analyse est visible sous deux angles :
+                            A. -> MCD
+                            B. -> MPD
+
+
+---- A. Modèle Conceptuel des Données
+-------------------------------------
+
+
+---- B. Modèle Physique des Données
+-------------------------------------
+
+Le MPD nous a permi de mieux visualiser comment créer les relations 'ManyToMany' ainsi que d'avoir une approche plus concrète
+de l'héritage.
+
+Une image au format png est disponible (Capture d'écran).
+
+
+ -------- II- Structure de la BdD
+ ------------------------------------
+
+ La structure de la base de données se situe dans le fichier structure.sql .
+
+
+
+
+ -------- III- Procédures Stockées et Séquences
+ ------------------------------------
+
+ Les procédures stockées sont situées dans le fichier PLSQL.sql .
+ Les séquences afin d'avoir l'auto-increment des identifiants uniques sont dans le fichier sequences.sql .
+
+ Un fichier nommé requêtesNicolas.sql contient des instructions permettant de supprimer toutes les tables ainsi
+ que leurs contraintes.
+
+
+ ------- IV- Données
+ -------------------------------------
+
+ Un script d'ajout de données à été mis à disposition : Data.sql .
+
+
+ -------- V- Autres
+ --------------------------------------
+
+ Moyens d'organisation :
+ -> Trello : https://trello.com/b/85fcBmyM
+ -> GitHub : https://github.com/edouardsouan/TP-Ecommerce.git
+ -> Skype.
