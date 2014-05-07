@@ -435,3 +435,31 @@ BEGIN
 
 
 END;
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+--On affiche le nom des produits dont la note est superieure à 3
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+CREATE OR REPLACE PROCEDURE GetBestRatedProducts
+AS
+  CURSOR cIdBestRatedProducts IS SELECT Produit_prod_id, AVG(note_valeur) FROM NoteProduit GROUP BY Produit_prod_id ORDER BY AVG(note_valeur) desc;
+  vIdProduct PRODUIT.PROD_ID%TYPE;
+  vRate NOTEPRODUIT.NOTE_VALEUR%TYPE;
+  vProductName PRODUIT.PROD_NOM%TYPE;
+  BEGIN
+
+    OPEN cIdBestRatedProducts;
+
+    LOOP
+      FETCH cIdBestRatedProducts INTO vIdProduct, vRate;
+
+      IF vRate > 3 THEN
+        SELECT PROD_NOM INTO vProductName FROM PRODUIT WHERE PROD_ID = vIdProduct;
+        DBMS_OUTPUT.PUT_LINE(vProductName ||' ( '||vRate||' )');
+      END IF;
+
+      EXIT WHEN cIdBestRatedProducts%NOTFOUND;
+    END LOOP;
+
+    CLOSE cIdBestRatedProducts;
+  END;
+/
